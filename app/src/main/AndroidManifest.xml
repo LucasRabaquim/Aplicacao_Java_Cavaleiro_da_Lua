@@ -11,8 +11,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Cavaleiro_da_Lua"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".curiosidades_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".diferencas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sensor"
+            android:exported="false" />
+        <activity
+            android:name=".resultado_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".quiz_Activity"
+            android:exported="false" />
         <activity
             android:name=".menu_Activity"
             android:exported="false" />

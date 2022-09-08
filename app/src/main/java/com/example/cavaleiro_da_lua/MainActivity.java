@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         botao = findViewById(R.id.btn_entrar);
         barra = findViewById(R.id.progressBar_entrar);
+
     }
     public void entrar(View view) throws InterruptedException {
         botao.setVisibility(View.INVISIBLE);
