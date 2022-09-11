@@ -12,4 +12,7 @@
     <color name="branco">#FAF9F7</color>
     <color name="vermelho">#FF0000</color>
     <color name="verde">#00B451</color>
+    <color name="cinza">#949494</color>
+    <color name="azul">#192841</color>
+    <color name="vermelho_escuro">#800000</color>
 </resources>

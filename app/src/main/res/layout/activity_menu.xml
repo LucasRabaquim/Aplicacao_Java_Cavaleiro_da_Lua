@@ -25,6 +25,7 @@
         android:id="@+id/button8"
         android:layout_width="157dp"
         android:layout_height="63dp"
+        android:onClick="balanca"
         android:text="@string/btn_balancolua"
         app:icon="@drawable/ic_launcher_foreground"
         app:iconSize="50dp"

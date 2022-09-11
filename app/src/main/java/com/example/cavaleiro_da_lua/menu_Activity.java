@@ -24,8 +24,12 @@ public class menu_Activity extends AppCompatActivity {
         Intent intent = new Intent(this, diferencas_Activity.class);
         startActivity(intent);
     }
+    public void balanca(View view) {
+        Intent intent = new Intent(this, activity_sensor.class);
+        startActivity(intent);
+    }
     public void curiosidades(View view) {
         Intent intent = new Intent(this, curiosidades_Activity.class);
         startActivity(intent);
-}
     }
+}

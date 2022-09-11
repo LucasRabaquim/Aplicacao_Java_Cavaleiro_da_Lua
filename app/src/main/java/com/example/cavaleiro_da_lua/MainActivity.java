@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void entrar(View view) throws InterruptedException {
         botao.setVisibility(View.INVISIBLE);
         barra.setVisibility(View.VISIBLE);
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
         Intent intent = new Intent(this, menu_Activity.class);
         startActivity(intent);
     }

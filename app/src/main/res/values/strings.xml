@@ -9,4 +9,10 @@
     <string name="btn_quiz">Quiz</string>
     <string name="btn_voltar">Voltar</string>
     <string name="btn_proxima_pergunta">Próxima</string>
+    <string name="placeholder">PlaceHolder</string>
+    <string name="btn_sensor_off">Medir a balança</string>
+    <string name="btn_sensor_on">Parar a balança</string>
+    <string name="msgbox_titulo">Ops</string>
+    <string name="msgbox_texto">O seu dispositivo não tem o sensor necessário</string>
+    <string name="txt_balanca">Teste sua inclinação viajante da noite</string>
 </resources>
