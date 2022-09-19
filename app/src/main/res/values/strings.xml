@@ -15,7 +15,7 @@
     <string name="msgbox_titulo">Ops</string>
     <string name="msgbox_texto">O seu dispositivo não tem o sensor necessário</string>
     <string name="msgbox_local_titulo">Escolha um local</string>
-    <string name="msgbox_local_texto">Seleciona um dos locais para compara a distância de onde você está</string>
+    <string name="msgbox_local_texto">Selecione um dos locais para compara a distância de onde você está</string>
     <string name="msgbox_quiz_titulo">Vai com calma</string>
     <string name="msgbox_quiz_texto">Selecione uma alternativa antes de avançar</string>
     <string name="txt_balanca">Teste sua inclinação viajante da noite</string>

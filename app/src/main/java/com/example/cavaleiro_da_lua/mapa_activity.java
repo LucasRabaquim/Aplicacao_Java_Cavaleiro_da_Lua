@@ -72,8 +72,7 @@ public class mapa_activity extends AppCompatActivity{
     public void localEscolhido(double[] local, String titulo){
         double latitude = localizacao_classe.latitude;
         double longitude = localizacao_classe.longitude;
-        double distancia = Math.sqrt(Math.pow(latitude -(local[0]),2) + Math.pow(longitude -(local[1]),2))* 111139/1000;
-        distancia = Math.round(distancia);
+        double distancia = Math.round(Math.sqrt(Math.pow(latitude -(local[0]),2) + Math.pow(longitude -(local[1]),2))* 111139/1000);
         String texto = "A distância é de:\n" + Double.toString(distancia) + " Km";
         view_distancia.setText(texto);
         view_local.setText(titulo);
