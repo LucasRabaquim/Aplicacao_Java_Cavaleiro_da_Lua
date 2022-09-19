@@ -15,4 +15,5 @@
     <color name="cinza">#949494</color>
     <color name="azul">#192841</color>
     <color name="vermelho_escuro">#800000</color>
+    <color name="pretoTransparente">#B9131313</color>
 </resources>

@@ -64,7 +64,7 @@ public class activity_sensor extends AppCompatActivity implements SensorEventLis
     String[] texto = {"Mr. Knight","Steven","Gire o celular","Mark","Moon Knight"};
 
     // Os valores de angulação para cada informação ser mostrada
-    Float[] angulos = {-9f,-3f,-1f,1f,3f};
+    Float[] angulos = {99f,15f,5f,-5f,-15f};
 
     // Index das informações dos arrays imagem e texto.
     int index_mensagem = 0;
@@ -86,14 +86,14 @@ public class activity_sensor extends AppCompatActivity implements SensorEventLis
                 /*Se for maior que o atual vai pegar a mensagem correspondente a esse angulo,
                 * se for menor que o próximo valor (quando comparar denovo), vai manter o valor,
                 * ou seja pega o valor que está entre os dois.*/
-                if(inclinacao > angulos[i]) index_mensagem = i;
+                if(inclinacao < angulos[i]) index_mensagem = i;
             mudarInformacoes(index_mensagem,inclinacao);
         }
     }
 
     public void mudarInformacoes(int index,float f){
         view_imagem.setImageResource(imagem[index]);
-        view_texto.setText(texto[index]);
+        view_texto.setText(texto[index] + " " + f);
     }
 
     public void tgClique(View view){

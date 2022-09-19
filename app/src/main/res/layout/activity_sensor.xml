@@ -37,7 +37,7 @@
 
     <ImageView
         android:id="@+id/img_sensor"
-        android:layout_width="412dp"
+        android:layout_width="0dp"
         android:layout_height="238dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +50,7 @@
 
     <TextView
         android:id="@+id/txt_sensor"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/branco"
         android:backgroundTint="@color/branco"
