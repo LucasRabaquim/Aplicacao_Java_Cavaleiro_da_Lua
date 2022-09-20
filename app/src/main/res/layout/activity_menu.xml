@@ -4,83 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_menu"
     tools:context=".menu_Activity">
 
 
     <Button
         android:id="@+id/button"
-        android:layout_width="157dp"
-        android:layout_height="63dp"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@color/azul"
         android:onClick="curiosidades"
         android:text="@string/btn_curiosidades"
+        android:textColor="@color/branco"
         app:icon="@drawable/ic_launcher_foreground"
         app:iconSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <Button
-        android:id="@+id/button8"
-        android:layout_width="157dp"
-        android:layout_height="63dp"
-        android:onClick="balanca"
-        android:text="@string/btn_balancolua"
+        android:id="@+id/button9"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@color/azul"
+        android:onClick="telaQuiz"
+        android:text="@string/btn_quiz"
+        android:textColor="@color/branco"
         app:icon="@drawable/ic_launcher_foreground"
         app:iconSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
+        app:layout_constraintVertical_bias="0.768" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="157dp"
-        android:layout_height="63dp"
-        android:onClick="diferencas"
-        android:text="@string/btn_diferencas"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@color/azul"
+        android:onClick="inicio"
+        android:text="@string/btn_inicio"
+        android:textColor="@color/branco"
         app:icon="@drawable/ic_launcher_foreground"
         app:iconSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintVertical_bias="0.926" />
 
     <Button
-        android:id="@+id/btn_quiz"
-        android:layout_width="157dp"
-        android:layout_height="63dp"
-        android:onClick="telaQuiz"
-        android:text="@string/btn_quiz"
-        app:icon="@drawable/btn_quiz"
+        android:id="@+id/button7"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@color/azul"
+        android:onClick="balanca"
+        android:text="@string/btn_balancolua"
+        android:textColor="@color/branco"
+        app:icon="@drawable/ic_launcher_foreground"
         app:iconSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.617" />
 
     <Button
-        android:id="@+id/btn_local"
-        android:layout_width="157dp"
-        android:layout_height="63dp"
+        android:id="@+id/button5"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@color/azul"
+        android:onClick="diferencas"
+        android:text="@string/btn_diferencas"
+        android:textColor="@color/branco"
+        app:icon="@drawable/ic_launcher_foreground"
+        app:iconSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@color/azul"
         android:onClick="local"
         android:text="@string/btn_local"
-        app:icon="@drawable/btn_quiz"
+        android:textColor="@color/branco"
+        app:icon="@drawable/ic_launcher_foreground"
         app:iconSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
-
+        app:layout_constraintVertical_bias="0.316" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

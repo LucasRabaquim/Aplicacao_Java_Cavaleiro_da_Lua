@@ -22,7 +22,7 @@ import android.widget.ToggleButton;
 import java.io.IOException;
 import java.util.List;
 
-public class activity_sensor extends AppCompatActivity implements SensorEventListener{
+public class sensor_Activity extends AppCompatActivity implements SensorEventListener{
 
     // As duas linhas abaixo: variaveis necessárias para gerenciar o sensor e definir qual sensor é respectivamente.
     SensorManager sensorManager;
@@ -64,7 +64,7 @@ public class activity_sensor extends AppCompatActivity implements SensorEventLis
     String[] texto = {"Mr. Knight","Steven","Gire o celular","Mark","Moon Knight"};
 
     // Os valores de angulação para cada informação ser mostrada
-    Float[] angulos = {99f,15f,5f,-5f,-15f};
+    Float[] angulos = {99f,6f,2f,-2f,-6f};
 
     // Index das informações dos arrays imagem e texto.
     int index_mensagem = 0;
@@ -93,7 +93,7 @@ public class activity_sensor extends AppCompatActivity implements SensorEventLis
 
     public void mudarInformacoes(int index,float f){
         view_imagem.setImageResource(imagem[index]);
-        view_texto.setText(texto[index] + " " + f);
+        view_texto.setText(texto[index]);
     }
 
     public void tgClique(View view){

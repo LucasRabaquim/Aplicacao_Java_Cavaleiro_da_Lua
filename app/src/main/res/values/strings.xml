@@ -8,6 +8,7 @@
     <string name="btn_balancolua">Balança da lua</string>
     <string name="btn_quiz">Quiz</string>
     <string name="btn_voltar">Voltar</string>
+    <string name="btn_inicio">Início</string>
     <string name="btn_proxima_pergunta">Próxima</string>
     <string name="placeholder">PlaceHolder</string>
     <string name="btn_sensor_off">Medir a balança</string>
@@ -27,4 +28,9 @@
     <string name="txt_locais_serie">Locais da série:</string>
     <string name="btn_distancia">Comparar Distância</string>
     <string name="btn_local">Locais de Gravação</string>
+    <string name="txt_noticia1">2ª temporada de Cavaleiro da Lua pode ter sido confirmada - <a href="https://observatoriodocinema.uol.com.br/series-e-tv/2a-temporada-de-cavaleiro-da-lua-pode-ter-sido-confirmada-veja">Veja</a></string>
+    <string name="txt_noticia2">Imagem traz o uniforme de Jake Lockley na <a href="https://legadodamarvel.com.br/cavaleiro-da-lua-imagem-traz-o-uniforme-de-jake-lockley-na-2a-temporada/">2ª Temporada</a></string>
+    <string name="txt_noticia3">Diretor de Cavaleiro da Lua diz que série "não precisa" de crossovers do MCU; <a href="https://br.ign.com/cavaleiro-da-lua/98165/news/diretor-de-cavaleiro-da-lua-diz-que-serie-nao-precisa-de-crossovers-do-mcu-entenda">entenda</a></string>
+    <string name="txt_inicio_titulo">Notícias</string>
+    <string name="txt_inicio">ㅤSeja bem vindo(a) ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤClique no ícone de menu para navegar pelo aplicativo</string>
 </resources>

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         botao.setVisibility(View.INVISIBLE);
         barra.setVisibility(View.VISIBLE);
         //Thread.sleep(10000);
-        Intent intent = new Intent(this, menu_Activity.class);
+        Intent intent = new Intent(this, inicio_activity.class);
         startActivity(intent);
     }
 }
