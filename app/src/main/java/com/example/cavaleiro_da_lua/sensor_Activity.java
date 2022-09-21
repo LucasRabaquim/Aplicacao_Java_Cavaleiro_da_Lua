@@ -62,9 +62,9 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
             if(s.getName().equals("LIS2DS Accelerometer")) acelerometro_existe = true;
         }
         // Define o tipo do sensor.
-        if (sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null)
-            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-        else if(sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null)
+       /* if (sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null)
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);*/
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null)
             sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         else
             sensor = null;
@@ -93,10 +93,10 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
     public void onSensorChanged(SensorEvent event){
         if(sensor_ligado) {
             // O Giroscópio só mede a variação no angulo, e não a angulação de forma perpendicular ao chão, por isso a soma
-            if(giroscopio_existe)
+            /*if(giroscopio_existe)
                 inclinacao += event.values[2];
-            else
-                inclinacao += event.values[2];
+            else*/
+                inclinacao = event.values[0];
             /* Reduz a quantidade de if/else por ver se está entre o valor comparado[i] e o proximo valor (pois a inclinação será testada denovo
                para ver se está entre o próximo e o depois dele).*/
             for(int i = 0; i < 5; i++)
@@ -110,7 +110,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
 
     public void mudarInformacoes(int index,float f){
         view_imagem.setImageResource(imagem[index]);
-        view_texto.setText(texto[index] + " " + Float.toString(f));
+        view_texto.setText(texto[index]);
     }
 
     public void tgClique(View view){
