@@ -63,7 +63,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
         else
             sensor = null;
         // "Liga o sensor" (faz com que o sensor reaja as mudanças na rotação e passe essas informações.)
-        sensorManager.registerListener( this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener( this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
 
         btn_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
 

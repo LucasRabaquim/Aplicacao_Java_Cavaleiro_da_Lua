@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -18,9 +20,10 @@ import androidx.core.app.ActivityCompat;
 public class mapa_activity extends AppCompatActivity{
 
     TextView view_distancia, view_local;
-    WebView view_mapa;
+    ImageView view_imagem;
     RadioButton rd1,rd2,rd3,rd4;
     String[] local = {"Museu de Belas Artes de Budapeste","Coblença na Alemanha","Bairro histórico do Cairo, Egito","Empresa organizadora de eventos\n em Budapeste"};
+    int[] imagem = {R.drawable.museu,R.drawable.castelo,R.drawable.cairo,R.drawable.manicomio};
     double[] museu = {47.5162, 19.0764},
              castelo = {50.2052, 7.3365},
              cairo = {30.0323, 31.2562},
@@ -31,7 +34,7 @@ public class mapa_activity extends AppCompatActivity{
         setContentView(R.layout.activity_mapa);
         view_distancia = findViewById(R.id.txt_distancia);
         view_local = findViewById(R.id.txt_local);
-        view_mapa = findViewById(R.id.wb_local);
+        view_imagem = findViewById(R.id.img_local);
         rd1 = findViewById(R.id.rd1_local);
         rd2 = findViewById(R.id.rd2_local);
         rd3 = findViewById(R.id.rd3_local);
@@ -51,13 +54,13 @@ public class mapa_activity extends AppCompatActivity{
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             if(rd1.isChecked())
-                localEscolhido(museu,local[0]);
+                localEscolhido(museu,local[0],imagem[0]);
             else if(rd2.isChecked())
-                localEscolhido(castelo,local[1]);
+                localEscolhido(castelo,local[1],imagem[1]);
             else if(rd3.isChecked())
-                localEscolhido(cairo,local[2]);
+                localEscolhido(cairo,local[2],imagem[2]);
             else if(rd4.isChecked())
-                localEscolhido(manicomio,local[3]);
+                localEscolhido(manicomio,local[3],imagem[3]);
             else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(R.string.msgbox_local_texto).setTitle(R.string.msgbox_local_titulo);
@@ -66,18 +69,23 @@ public class mapa_activity extends AppCompatActivity{
         }
     }
 
-    public void localEscolhido(double[] local, String titulo){
+    double[] localMapa = museu;
+    public void localEscolhido(double[] local, String titulo, int imagem){
         double latitude = localizacao_classe.latitude;
         double longitude = localizacao_classe.longitude;
         double distancia = Math.round(Math.sqrt(Math.pow(latitude -(local[0]),2) + Math.pow(longitude -(local[1]),2))* 111139/1000);
         String texto = "A distância é de:\n" + Double.toString(distancia) + " Km";
         view_distancia.setText(texto);
         view_local.setText(titulo);
-        mostrarMapa(local);
+        view_imagem.setImageResource(imagem);
+        localMapa = local;
     }
-    public void mostrarMapa(double[] local) {
-        view_mapa.getSettings().setJavaScriptEnabled(true);
-        view_mapa.loadUrl("https://www.google.com/maps/search/?api=1&query=" + local[0] + "," + local[1]);
+
+    public void mostrarMapa(View view) {
+        String mapa = "geo:" + localMapa[0] + "," + localMapa[1];
+        Uri urlMapa = Uri.parse(mapa);
+        Intent intentMapa = new Intent(Intent.ACTION_VIEW, urlMapa);
+        startActivity(intentMapa);
     }
 
     public void voltarMenu(View view){

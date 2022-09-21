@@ -99,7 +99,7 @@ public class quiz_Activity extends AppCompatActivity {
         // Se o usuário marcou o radio button certo, ele acertou uma questão
         if(rd_resposta[pergunta_atual].isChecked())
             acertos++;
-        if(!(rd1.isChecked() || rd2.isChecked() || rd3.isChecked()) || rd4.isChecked()){
+        if(!(rd1.isChecked() || rd2.isChecked() || rd3.isChecked()|| rd4.isChecked())){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.msgbox_quiz_texto).setTitle(R.string.msgbox_quiz_titulo);
             builder.create().show();
