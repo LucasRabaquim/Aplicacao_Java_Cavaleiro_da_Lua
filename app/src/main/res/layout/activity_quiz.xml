@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/branco"
+    android:background="@drawable/background_quiz"
     tools:context=".quiz_Activity">
 
     <RadioGroup
@@ -66,7 +66,7 @@
         android:id="@+id/btn_proxima"
         android:layout_width="122dp"
         android:layout_height="66dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/amarelo_lua"
         android:onClick="proximaPergunta"
         android:text="@string/btn_proxima_pergunta"
         android:textColor="@color/branco"
@@ -111,6 +111,7 @@
         android:layout_height="35dp"
         android:text="@string/placeholder"
         android:textColor="@color/preto"
+        android:background="@color/branco"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

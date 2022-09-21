@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/branco"
+    android:background="@drawable/background_mapa"
     tools:context=".mapa_activity">
 
     <androidx.appcompat.widget.Toolbar
@@ -20,19 +20,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0" >
-    <Button
-        android:id="@+id/btn_menu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/hamburger"
-        android:onClick="voltarMenu"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintVertical_bias="0">
+
+        <Button
+            android:id="@+id/btn_menu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/hamburger"
+            android:onClick="voltarMenu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
     </androidx.appcompat.widget.Toolbar>
 
     <RadioGroup
@@ -40,6 +41,7 @@
         android:layout_width="333dp"
         android:layout_height="155dp"
         android:layout_marginTop="36dp"
+        android:background="@color/pretoTransparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +52,8 @@
             android:id="@+id/rd1_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_museu" />
+            android:text="@string/rd_museu"
+            android:textColor="@color/branco" />
 
         <View
             android:id="@+id/divider8"
@@ -62,7 +65,8 @@
             android:id="@+id/rd2_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_castelo" />
+            android:text="@string/rd_castelo"
+            android:textColor="@color/branco" />
 
         <View
             android:id="@+id/divider7"
@@ -74,7 +78,8 @@
             android:id="@+id/rd3_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_Cairo" />
+            android:text="@string/rd_Cairo"
+            android:textColor="@color/branco" />
 
         <View
             android:id="@+id/divider5"
@@ -86,7 +91,8 @@
             android:id="@+id/rd4_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_manicomio" />
+            android:text="@string/rd_manicomio"
+            android:textColor="@color/branco" />
 
         <View
             android:id="@+id/divider"
@@ -100,6 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="302dp"
         android:layout_marginTop="1dp"
+        android:background="@drawable/background_webview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -114,10 +121,10 @@
         android:layout_width="347dp"
         android:layout_height="51dp"
         android:layout_marginTop="16dp"
-        android:background="@color/branco"
+        android:background="@color/pretoTransparente"
         android:text="@string/txt_locais_serie"
         android:textAlignment="center"
-        android:textColor="@color/preto"
+        android:textColor="@color/branco"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +136,8 @@
         android:id="@+id/txt_distancia"
         android:layout_width="199dp"
         android:layout_height="61dp"
-        android:textColor="@color/preto"
+        android:background="@color/pretoTransparente"
+        android:textColor="@color/branco"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -152,7 +160,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

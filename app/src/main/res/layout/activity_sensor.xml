@@ -7,6 +7,7 @@
     android:background="@drawable/background_sensor"
     tools:context=".sensor_Activity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="409dp"
@@ -52,11 +53,10 @@
         android:id="@+id/txt_sensor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/branco"
-        android:backgroundTint="@color/branco"
+        android:background="@color/pretoTransparente"
         android:text="@string/txt_balanca"
         android:textAlignment="center"
-        android:textColor="@color/preto"
+        android:textColor="@color/branco"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,20 +65,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.443" />
 
-    <ToggleButton
-        android:id="@+id/tg_btn_sensor"
+
+    <Switch
+        android:id="@+id/btn_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/branco"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
+
+    <TextView
+        android:id="@+id/txt_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/amarelo_lua"
-        android:onClick="tgClique"
-        android:text="@string/placeholder"
+        android:text="@string/txt_balanca_switch"
         android:textColor="@color/branco"
-        android:textOff="@string/btn_sensor_off"
-        android:textOn="@string/btn_sensor_on"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
-
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.672" />
 </androidx.constraintlayout.widget.ConstraintLayout>
