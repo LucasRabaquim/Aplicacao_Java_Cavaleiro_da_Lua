@@ -16,7 +16,7 @@ public class curiosidades_Activity extends AppCompatActivity {
     TextView view_txt_curio;
 
     int Curio_atual = 0;
-    String[] perguntas = {"Que o cavaleiro da lua sofre de Transtorno Dissociativo de Identidade","Quais são os poderes do cavaleiro da lua?","Por que o trade do cavaleiro da lua é branco","Qual a origem da família do cavaleiro da lua"};
+    String[] perguntas = {"Que o cavaleiro da lua sofre de Transtorno Dissociativo de Identidade","Quais são os poderes do cavaleiro da lua","Por que o trade do cavaleiro da lua é branco","Qual a origem da família do cavaleiro da lua"};
     String[] texto_Curio = {
             "1) O transtorno do Cavaleiro da Lua\n" +
                     "O personagem sofre de Transtorno Dissociativo de Identidade.\n Seus principais 'eus'" +
@@ -102,7 +102,7 @@ public class curiosidades_Activity extends AppCompatActivity {
         // String mapa = "geo:" + localMapa[0] + "," + localMapa[1]
         Intent intentCompartilhar = new Intent();
         intentCompartilhar.setAction(Intent.ACTION_SEND);
-        String mensagem = "Você sabe: " + perguntas[Curio_atual] + "? Baixe o app Cavaleiro da Lua para saber mais.";
+        String mensagem = "Você sabia: " + perguntas[Curio_atual] + "?\n Baixe o app Cavaleiro da Lua para saber mais.";
         intentCompartilhar.putExtra(Intent.EXTRA_TEXT, mensagem);
         intentCompartilhar.setType("text/plain");
         startActivity(intentCompartilhar);
