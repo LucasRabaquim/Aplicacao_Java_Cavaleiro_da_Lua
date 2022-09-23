@@ -22,23 +22,23 @@ public class quiz_Activity extends AppCompatActivity {
     TextView view_txt_pergunta,view_txt_acertos;
 
     // Array para guardar o texto de cada pergunta
-    String[] texto_pergunta = {
-            "1) Onde Steven Grant trabalha?",
-            "2) Qual Deus NÃO estava no episódio 3?",
-            "3) Qual a forma da Deusa Tuéris?",
-            "4) Como eram os detalhes da\n bandana do pai de Layla?",
-            "5) Qual era o filme favorito do Marc?",
-            "6) Onde Amnit está aprisionada?"
+    int[] texto_pergunta = {
+            R.string.txt_pergunta1,
+            R.string.txt_pergunta2,
+            R.string.txt_pergunta3,
+            R.string.txt_pergunta4,
+            R.string.txt_pergunta5,
+            R.string.txt_pergunta6
     };
 
     // Array bidimensional para guardar o texto de cara alternativa
-    String[][] alternativa_pergunta ={
-            {"Uma Loja de Presentes","Um asilo de idosos","É desempregado","Atendente de supermercado"},
-            {"Hórus","Hartor","Amnit","Ísis"},
-            {"Um Chacal","Uma humana de 8 braços","Uma águia","Um hipopótamo"},
-            {"Tinha escaravelhos feitos a mão","Tinha desenhos de lua","Tinha flores e corações vermelhos","Tinha desenhos de pirâmides"},
-            {"As aventuras de Steven Grant","Tomb Buster","Ruster Tomb","Os Trapalhões"},
-            {"Na pirâmide de Gize","No sarcófago de Senfu","No templo do céu","Na tumba de Alexandre, o Grade"}
+    int[][] alternativa_pergunta ={
+            {R.string.txt_alternativa_pergunta_0_0,R.string.txt_alternativa_pergunta_0_1,R.string.txt_alternativa_pergunta_0_2,R.string.txt_alternativa_pergunta_0_3},
+            {R.string.txt_alternativa_pergunta_1_0,R.string.txt_alternativa_pergunta_1_1,R.string.txt_alternativa_pergunta_1_2,R.string.txt_alternativa_pergunta_1_3},
+            {R.string.txt_alternativa_pergunta_2_0,R.string.txt_alternativa_pergunta_2_1,R.string.txt_alternativa_pergunta_2_2,R.string.txt_alternativa_pergunta_2_3},
+            {R.string.txt_alternativa_pergunta_3_0,R.string.txt_alternativa_pergunta_3_1,R.string.txt_alternativa_pergunta_3_2,R.string.txt_alternativa_pergunta_3_3},
+            {R.string.txt_alternativa_pergunta_4_0,R.string.txt_alternativa_pergunta_4_1,R.string.txt_alternativa_pergunta_4_2,R.string.txt_alternativa_pergunta_4_3},
+            {R.string.txt_alternativa_pergunta_5_0,R.string.txt_alternativa_pergunta_5_1,R.string.txt_alternativa_pergunta_5_2,R.string.txt_alternativa_pergunta_5_3}
     };
 
     // Marca em qual questão estamos e o número de acertos
@@ -81,11 +81,11 @@ public class quiz_Activity extends AppCompatActivity {
         // Até view_imagem: monta a pergunta para o usuário
         for(int i = 0; i < 4; i++)
             rd_pergunta[i].setText(alternativa_pergunta[pergunta_atual][i]);
-        view_txt_pergunta.setText(texto_pergunta[pergunta_atual]);
+        view_txt_pergunta.setText(getResources().getString(texto_pergunta[pergunta_atual]));
         view_imagem.setImageResource(imagem[pergunta_atual]);
 
         // Mostra o número de acertos
-        view_txt_acertos.setText("Acertos: " + acertos + "/6");
+        view_txt_acertos.setText(getResources().getString(R.string.acertos) + acertos + getResources().getString(R.string.seis));
     }
 
     // As duas linhas abaixo são os parâmetros que vamos passar para a proxima Activity

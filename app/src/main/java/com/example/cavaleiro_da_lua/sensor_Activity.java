@@ -118,7 +118,8 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
                 angulos = new Float[]{10f,6f,3f,-3f,-6f};
             }
 
-            /* Reduz a quantidade de if/else por ver se está entre o valor comparado[i] e o proximo valor (pois a inclinação será testada denovo
+            /* Reduz a quantidade de if/else por ver se está entre o valor comparado[i] e o proximo
+               valor (pois a inclinação será testada denovo
                para ver se está entre o próximo e o depois dele).*/
             for(int i = 0; i < 5; i++)
                 /*Se for maior que o atual vai pegar a mensagem correspondente a esse angulo,

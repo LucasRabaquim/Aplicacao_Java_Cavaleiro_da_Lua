@@ -12,7 +12,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_aplicativo"
+        android:icon="@mipmap/ic_aplicativo_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_aplicativo_round"
         android:supportsRtl="true"

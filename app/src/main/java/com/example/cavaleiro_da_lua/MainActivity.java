@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Definindo os elementos do designs para programar neles
     ProgressBar barra;
     Button botao;
     @Override
@@ -18,12 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         botao = findViewById(R.id.btn_entrar);
         barra = findViewById(R.id.progressBar_entrar);
-
     }
-    public void entrar(View view) throws InterruptedException {
+
+    /* Botão para entrar, esconde o botão e mostra a barra de carregamento, mudando de tela após
+     um tempo indeterminado. */
+    public void entrar(View view){
         botao.setVisibility(View.INVISIBLE);
         barra.setVisibility(View.VISIBLE);
-        //Thread.sleep(10000);
         Intent intent = new Intent(this, inicio_activity.class);
         startActivity(intent);
     }

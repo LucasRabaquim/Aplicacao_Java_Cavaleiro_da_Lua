@@ -17,6 +17,8 @@ public class menu_Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
+
+    // Menu com as intent explicitas para outras activities do app
     public void telaQuiz(View view){
         Intent intent = new Intent(this, quiz_Activity.class);
         startActivity(intent);

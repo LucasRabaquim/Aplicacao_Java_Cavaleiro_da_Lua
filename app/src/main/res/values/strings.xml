@@ -4,7 +4,7 @@
     <string name="btn_entrar">Entrar</string>
     <string name="txt_menu">Menu</string>
     <string name="btn_curiosidades">Curiosidades de Gravação</string>
-    <string name="btn_diferencas">Diferenças série e quadrinhos</string>
+    <string name="btn_diferencas">Histórias do Cavaleiro da Lua</string>
     <string name="btn_balancolua">Balança da lua</string>
     <string name="btn_quiz">Quiz</string>
     <string name="btn_voltar">Voltar</string>
@@ -20,6 +20,10 @@
     <string name="msgbox_quiz_texto">Selecione uma alternativa antes de avançar</string>
     <string name="txt_balanca">Teste sua inclinação viajante da noite</string>
     <string name="pesquisar_hint">Pesquise locais da série</string>
+    <string name="txt_locais1">Museu de Belas Artes de Budapeste</string>
+    <string name="txt_locais2">Coblença na Alemanha</string>
+    <string name="txt_locais3">Bairro histórico do Cairo, Egito</string>
+    <string name="txt_locais4">Empresa organizadora de eventos em Budapeste</string>
     <string name="rd_Cairo">Cidade de Cairo</string>
     <string name="rd_manicomio">Manicômio</string>
     <string name="rd_museu">Museu</string>
@@ -29,7 +33,7 @@
     <string name="btn_local">Locais de Gravação</string>
     <string name="txt_noticia1">2ª temporada de Cavaleiro da Lua pode ter sido confirmada - <a href="https://observatoriodocinema.uol.com.br/series-e-tv/2a-temporada-de-cavaleiro-da-lua-pode-ter-sido-confirmada-veja">Veja</a></string>
     <string name="txt_noticia2">Imagem traz o uniforme de Jake Lockley na <a href="https://legadodamarvel.com.br/cavaleiro-da-lua-imagem-traz-o-uniforme-de-jake-lockley-na-2a-temporada/">2ª Temporada</a></string>
-    <string name="txt_noticia3">Diretor de Cavaleiro da Lua diz que série "não precisa" de crossovers do MCU; <a href="https://br.ign.com/cavaleiro-da-lua/98165/news/diretor-de-cavaleiro-da-lua-diz-que-serie-nao-precisa-de-crossovers-do-mcu-entenda">entenda</a></string>
+    <string name="txt_noticia3">Diretor de Cavaleiro da Lua diz que série "não precisa" de <a href="https://br.ign.com/cavaleiro-da-lua/98165/news/diretor-de-cavaleiro-da-lua-diz-que-serie-nao-precisa-de-crossovers-do-mcu-entenda">crossovers do MCU;</a></string>
     <string name="txt_inicio_titulo">Notícias</string>
     <string name="btn_Comprar">Comprar</string>
 
@@ -45,4 +49,76 @@
     conhecido como A verdade, que está levando as pessoas a se suicidarem.</string>
 
     <string name="txt_inicio">ㅤSeja bem vindo(a) ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤClique no ícone de menu para navegar pelo aplicativo</string>
+
+    <string name="txt_curio1">"1) O transtorno do Cavaleiro da Lua\n"
+                    "O personagem sofre de Transtorno Dissociativo de Identidade.\n Seus principais 'eus'"
+                    "são: O taxista Jack Lockey, o milionário Steven Grant, \n e seu eu verdadeiro eu, Marc Spector."
+                    "Jack Lockey \n aparece somente no último ep, durante as cenas pós-créditos."</string>
+    <string name="txt_curio2">"2) Seus poderes\n"
+                    "Ao aceitar o pacto com Khonshu, Marc ganha poderes como: visão noturna,\n"
+                    "a habilidade de enxergar o plano lunar, etc. \nTudo isso se modifica de acordo \n"
+                    "com as fases da lua."</string>
+    <string name="txt_curio3">"3) Por que seu traje é branco?\n"
+                    "Muitos super heróis se vestem com trajes discretos,\n com cores como preto,"
+                    "para passarem despercebidos. Diferentes desses,\n o cavaleiro da lua se veste de branco,\n"
+                    "justamente para que seus unimigos o percebam."</string>
+    <string name="txt_curio4">"4) A origem Judaica \n" +
+                    "A família de Marc Spector teve que fugir\n da Europa durante a perseguição aos judeus na\n"
+                    "Segunda Guerra Mundial. Encontraram refúgio nos Estados Unidos e\n"
+                    "Marc cresceu segundo os ensinamentos de seu pai rabino."</string>
+    <string name="txt_curio_perguntas1">"Você sabia: Que o cavaleiro da lua sofre de Transtorno Dissociativo de Identidade?\n Baixe o app Cavaleiro da Lua para saber mais."</string>
+    <string name="txt_curio_perguntas2">"Você sabe: Quais são os poderes do cavaleiro da lua?\n Baixe o app Cavaleiro da Lua para saber mais."</string>
+    <string name="txt_curio_perguntas3">"Você sabie: Por que o trade do cavaleiro da lua é branco?\n Baixe o app Cavaleiro da Lua para saber mais."</string>
+    <string name="txt_curio_perguntas4">"Você sabia: Qual a origem da família do cavaleiro da lua?\n Baixe o app Cavaleiro da Lua para saber mais."</string>
+    <string name="txt_formatar_distancia">"A distância é de:\n"</string>
+    <string name="km"> Km.</string>
+    <string name="txt_iniciar_balanca"> Parar a balança</string>
+    <string name="txt_parar_balanca"> Iniciar a balança</string>
+    <string name="txt_sensor1">Mr. Knight</string>
+    <string name="txt_sensor2">Steven</string>
+    <string name="txt_sensor3">Gire o celular</string>
+    <string name="txt_sensor4">Mark</string>
+    <string name="txt_sensor5">Moon Knight</string>
+
+    <string name="txt_pergunta1">1) Onde Steven Grant trabalha?</string>
+    <string name="txt_pergunta2">2) Qual Deus NÃO estava no episódio 3?</string>
+    <string name="txt_pergunta3">3) Qual a forma da Deusa Tuéris?</string>
+    <string name="txt_pergunta4">4) Como eram os detalhes da bandana do pai de Layla?</string>
+    <string name="txt_pergunta5">5) Qual era o filme favorito do Marc?</string>
+    <string name="txt_pergunta6">6) Onde Amnit estava aprisionada?</string>
+    <string name="txt_alternativa_pergunta_0_0">Uma Loja de Presentes</string>
+    <string name="txt_alternativa_pergunta_0_1">Um asilo de idosos</string>
+    <string name="txt_alternativa_pergunta_0_2">É desempregado</string>
+    <string name="txt_alternativa_pergunta_0_3">Atendente de supermercado</string>
+    <string name="txt_alternativa_pergunta_1_0">Hórus</string>
+    <string name="txt_alternativa_pergunta_1_1">Hartor</string>
+    <string name="txt_alternativa_pergunta_1_2">Amnit</string>
+    <string name="txt_alternativa_pergunta_1_3">Ísis</string>
+    <string name="txt_alternativa_pergunta_2_0">Um Chacal</string>
+    <string name="txt_alternativa_pergunta_2_1">Uma humana de 8 braços</string>
+    <string name="txt_alternativa_pergunta_2_2">Uma águia</string>
+    <string name="txt_alternativa_pergunta_2_3">Um hipopótamo</string>
+    <string name="txt_alternativa_pergunta_3_0">Tinha escaravelhos feitos a mão</string>
+    <string name="txt_alternativa_pergunta_3_1">Tinha desenhos de lua</string>
+    <string name="txt_alternativa_pergunta_3_2">Tinha flores e corações vermelhos</string>
+    <string name="txt_alternativa_pergunta_3_3">Tinha desenhos de pirâmides</string>
+    <string name="txt_alternativa_pergunta_4_0">As aventuras de Steven Grant</string>
+    <string name="txt_alternativa_pergunta_4_1">Tomb Buster</string>
+    <string name="txt_alternativa_pergunta_4_2">Ruster Tomb</string>
+    <string name="txt_alternativa_pergunta_4_3">Os Trapalhões</string>
+    <string name="txt_alternativa_pergunta_5_0">Na pirâmide de Gize</string>
+    <string name="txt_alternativa_pergunta_5_1">No sarcófago de Senfu</string>
+    <string name="txt_alternativa_pergunta_5_2">No templo do céu</string>
+    <string name="txt_alternativa_pergunta_5_3">Na tumba de Alexandre, o Grade</string>
+    <string name="acertos">Acertos: </string>
+    <string name="seis"> /6</string>
+    <string name="txt_descricao1">Você é um verdadeiro(a) cavaleiro(a) da lua.</string>
+    <string name="txt_descricao2">Você é honrado(a) viajante da noite.</string>
+    <string name="txt_descricao3">Você deve re-assistir a série.</string>
+    <string name="txt_descricao4">Você assistiu a série antes? Khonshu está furioso.</string>
+    <string name="txt_resultado1">Parabéns !</string>
+    <string name="txt_resultado2">Muito Bom</string>
+    <string name="txt_resultado3">Dá pra melhorar</string>
+    <string name="txt_resultado4">Qual é?</string>
+    <string name="chooser_navegador">Escolha um navegador</string>
 </resources>

@@ -1,7 +1,7 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,27 +16,9 @@ public class curiosidades_Activity extends AppCompatActivity {
     TextView view_txt_curio;
 
     int Curio_atual = 0;
-    String[] perguntas = {"Que o cavaleiro da lua sofre de Transtorno Dissociativo de Identidade","Quais são os poderes do cavaleiro da lua","Por que o trade do cavaleiro da lua é branco","Qual a origem da família do cavaleiro da lua"};
-    String[] texto_Curio = {
-            "1) O transtorno do Cavaleiro da Lua\n" +
-                    "O personagem sofre de Transtorno Dissociativo de Identidade.\n Seus principais 'eus'" +
-                    "são: O taxista Jack Lockey, o milionário Steven Grant, \n e seu eu verdadeiro eu, Marc Spector." +
-                    "Jack Lockey \n aparece somente no último ep, durante as cenas pós-créditos.",
+    int[] texto_Curio = {R.string.txt_curio1, R.string.txt_curio2, R.string.txt_curio3, R.string.txt_curio4};
+    int[] perguntas = {R.string.txt_curio_perguntas1, R.string.txt_curio_perguntas2,R.string.txt_curio_perguntas3,R.string.txt_curio_perguntas4};
 
-            "2) Seus poderes\n" +
-                    "Ao aceitar o pacto com Khonshu, Marc ganha poderes como: visão noturna,\n" +
-                    "a habilidade de enxergar o plano lunar, etc. \nTudo isso se modifica de acordo \n" +
-                    "com as fases da lua.",
-
-            "3) Por que seu traje é branco?\n" +
-                    "Muitos super heróis se vestem com trajes discretos,\n com cores como preto," +
-                    "para passarem despercebidos. Diferentes desses,\n o cavaleiro da lua se veste de branco,\n" +
-                    "justamente para que seus unimigos o percebam.",
-            "4) A origem Judaica \n" +
-                    "A família de Marc Spector teve que fugir\n da Europa durante a perseguição aos judeus na\n" +
-                    "Segunda Guerra Mundial. Encontraram refúgio nos Estados Unidos e\n" +
-                    "Marc cresceu segundo os ensinamentos de seu pai rabino.",
-    };
 
 
     @Override
@@ -74,19 +56,18 @@ public class curiosidades_Activity extends AppCompatActivity {
             view_imagem2.setImageResource(origem);
             view_imagem1.setImageResource(luacheia);
         }
-        view_txt_curio.setText(texto_Curio[Curio_atual]);
+        view_txt_curio.setText(getResources().getString(texto_Curio[Curio_atual]));
     }
 
     static public final String EXTRA_CURIO = ".curiosidade";
 
     public void proxima(View view){
-       Curio_atual++;
-       if(Curio_atual > 3)
-           Curio_atual = 0;
-       Intent intent = new Intent(this, curiosidades_Activity.class);
-       intent.putExtra(EXTRA_CURIO, Curio_atual);
-       // Inicia a proxima activity
-       startActivity(intent);
+        Curio_atual++;
+        if(Curio_atual > 3)
+            Curio_atual = 0;
+        Intent intent = new Intent(this, curiosidades_Activity.class);
+        intent.putExtra(EXTRA_CURIO, Curio_atual);
+        startActivity(intent);
     }
     public void anterior(View view){
         Curio_atual--;
@@ -94,21 +75,19 @@ public class curiosidades_Activity extends AppCompatActivity {
             Curio_atual = 3;
         Intent intent = new Intent(this, curiosidades_Activity.class);
         intent.putExtra(EXTRA_CURIO, Curio_atual);
-        // Inicia a proxima activity
         startActivity(intent);
     }
 
     public void compartilhar(View view) {
-        // String mapa = "geo:" + localMapa[0] + "," + localMapa[1]
         Intent intentCompartilhar = new Intent();
         intentCompartilhar.setAction(Intent.ACTION_SEND);
-        String mensagem = "Você sabia: " + perguntas[Curio_atual] + "?\n Baixe o app Cavaleiro da Lua para saber mais.";
+        String mensagem = getResources().getString(perguntas[Curio_atual]);
         intentCompartilhar.putExtra(Intent.EXTRA_TEXT, mensagem);
         intentCompartilhar.setType("text/plain");
         startActivity(intentCompartilhar);
     }
-    
-    
+
+
 
     public void voltarMenu(View view){
         Intent intent = new Intent(this, menu_Activity.class);

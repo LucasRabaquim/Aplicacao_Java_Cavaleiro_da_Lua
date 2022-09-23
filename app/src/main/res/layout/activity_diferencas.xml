@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pretoTransparente"
+    android:background="@drawable/background_quadrinhos"
     tools:context=".diferencas_Activity">
 
     <androidx.appcompat.widget.Toolbar
@@ -37,8 +37,9 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
-        android:layout_width="408dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -51,15 +52,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
                 android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
 
                     android:id="@+id/img_hq1"
-                    android:layout_width="156dp"
+                    android:layout_width="131dp"
                     android:layout_height="195dp"
                     android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/recomeco"
                     tools:layout_editor_absoluteX="32dp"
                     tools:layout_editor_absoluteY="67dp"
                     tools:src="@drawable/recomeco" />
@@ -77,30 +80,35 @@
                     android:id="@+id/btn_Comprar"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
+                    android:layout_marginTop="50dp"
                     android:layout_weight="1"
+                    android:background="@color/teal_700"
                     android:onClick="btn_hq1"
-                    android:text="@string/btn_Comprar" />
+                    android:text="@string/btn_Comprar"
+                    android:textColor="@color/branco" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
                 android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/img_hq2"
-                    android:layout_width="157dp"
-                    android:layout_height="194dp"
+                    android:layout_width="131dp"
+                    android:layout_height="195dp"
                     android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/paladinos12"
                     tools:layout_editor_absoluteX="32dp"
                     tools:layout_editor_absoluteY="257dp"
                     tools:src="@drawable/paladinos12" />
 
                 <TextView
                     android:id="@+id/txt_hq2"
-                    android:layout_width="151dp"
+                    android:layout_width="153dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq2"
                     android:textColor="@color/branco"
@@ -110,23 +118,28 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
+                    android:layout_marginTop="50dp"
                     android:layout_weight="1"
+                    android:background="@color/teal_700"
                     android:onClick="btn_hq2"
-                    android:text="@string/btn_Comprar" />
+                    android:text="@string/btn_Comprar"
+                    android:textColor="@color/branco" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
                 android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/img_hq3"
-                    android:layout_width="154dp"
+                    android:layout_width="131dp"
                     android:layout_height="199dp"
                     android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/paladinos3"
                     tools:layout_editor_absoluteX="32dp"
                     tools:layout_editor_absoluteY="447dp"
                     tools:src="@drawable/paladinos3" />
@@ -136,7 +149,7 @@
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq3"
-                    android:textColor="@color/black"
+                    android:textColor="@color/branco"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="625dp" />
 
@@ -144,21 +157,27 @@
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
+                    android:layout_marginTop="50dp"
                     android:layout_weight="1"
+                    android:background="@color/teal_700"
                     android:onClick="btn_hq3"
-                    android:text="@string/btn_Comprar" />
+                    android:text="@string/btn_Comprar"
+                    android:textColor="@color/branco" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/img_hq4"
-                    android:layout_width="156dp"
+                    android:layout_width="131dp"
                     android:layout_height="198dp"
+                    app:srcCompat="@drawable/loucura"
                     tools:layout_editor_absoluteX="32dp"
                     tools:layout_editor_absoluteY="625dp"
                     tools:src="@drawable/loucura" />
@@ -168,7 +187,7 @@
                     android:layout_width="154dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq4"
-                    android:textColor="@color/black"
+                    android:textColor="@color/branco"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="447dp" />
 
@@ -176,9 +195,12 @@
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
+                    android:layout_marginTop="50dp"
                     android:layout_weight="1"
+                    android:background="@color/teal_700"
                     android:onClick="btn_hq4"
-                    android:text="@string/btn_Comprar" />
+                    android:text="@string/btn_Comprar"
+                    android:textColor="@color/branco" />
 
             </LinearLayout>
 
