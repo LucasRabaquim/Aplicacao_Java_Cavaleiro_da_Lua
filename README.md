@@ -1,5 +1,9 @@
 # Aplicacao_Java_Cavaleiro_da_Lua
-Aplicativo mobile do herói da Marvel Cavaleiro da Lua desenvolvido em Java. Por: Polianna e Lucas.
+Aplicativo mobile do herói da Marvel Cavaleiro da Lua desenvolvido em Java. Por:
+Polianna Albuquerque Lima.
+Lucas Daniel da Costa Rabaquim.
+2°ETIM DS
+
 <hr>
  O Aplicativo é nossa avaliação bimestral que avalia conceitos passados em aula como:
  <ul>
