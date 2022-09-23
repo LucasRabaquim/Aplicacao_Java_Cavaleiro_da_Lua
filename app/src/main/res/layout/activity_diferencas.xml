@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pretoTransparente"
     tools:context=".diferencas_Activity">
 
     <androidx.appcompat.widget.Toolbar
@@ -50,6 +51,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -67,7 +69,7 @@
                     android:layout_width="154dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq1"
-                    android:textColor="@color/black"
+                    android:textColor="@color/branco"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="74dp" />
 
@@ -76,13 +78,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_weight="1"
-                    android:text="Comprar" />
+                    android:onClick="btn_hq1"
+                    android:text="@string/btn_Comprar" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -99,7 +103,7 @@
                     android:layout_width="151dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq2"
-                    android:textColor="@color/black"
+                    android:textColor="@color/branco"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="257dp" />
 
@@ -107,13 +111,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_weight="1"
-                    android:text="Comprar" />
+                    android:onClick="btn_hq2"
+                    android:text="@string/btn_Comprar" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/pretoTransparente"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -139,7 +145,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_weight="1"
-                    android:text="Comprar" />
+                    android:onClick="btn_hq3"
+                    android:text="@string/btn_Comprar" />
 
             </LinearLayout>
 
@@ -170,7 +177,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_weight="1"
-                    android:text="Comprar" />
+                    android:onClick="btn_hq4"
+                    android:text="@string/btn_Comprar" />
 
             </LinearLayout>
 
