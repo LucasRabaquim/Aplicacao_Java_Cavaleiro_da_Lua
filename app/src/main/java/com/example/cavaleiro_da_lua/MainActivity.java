@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public void entrar(View view){
         botao.setVisibility(View.INVISIBLE);
         barra.setVisibility(View.VISIBLE);
-        Intent intent = new Intent(this, inicio_activity.class);
+        Intent intent = new Intent(this, inicio_Activity.class);
         startActivity(intent);
     }
 }

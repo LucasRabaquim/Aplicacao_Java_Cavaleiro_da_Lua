@@ -9,11 +9,10 @@
     tools:context=".curiosidades_Activity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/btn_compartilhar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="compartilhar"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.85"
@@ -52,7 +51,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/img_Curio"
+        android:id="@+id/img_curio"
         android:layout_width="177dp"
         android:layout_height="198dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,15 +71,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_Curio"
+        app:layout_constraintTop_toBottomOf="@+id/img_curio"
         app:layout_constraintVertical_bias="0.288" />
 
     <ImageButton
-        android:id="@+id/btn_Curio1"
+        android:id="@+id/btn_curio_proxima"
         android:layout_width="46dp"
         android:layout_height="97dp"
         android:background="@drawable/seta_direita"
-        android:onClick="proxima"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
@@ -90,11 +88,10 @@
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/btn_Curio2"
+        android:id="@+id/btn_curio_anterior"
         android:layout_width="46dp"
         android:layout_height="97dp"
         android:background="@drawable/seta_esquerda"
-        android:onClick="anterior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txt_Curio"
         app:layout_constraintHorizontal_bias="1"
@@ -104,10 +101,10 @@
         tools:src="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/img_Curio2"
+        android:id="@+id/img_lua"
         android:layout_width="114dp"
         android:layout_height="96dp"
-        app:layout_constraintBottom_toTopOf="@+id/img_Curio"
+        app:layout_constraintBottom_toTopOf="@+id/img_curio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

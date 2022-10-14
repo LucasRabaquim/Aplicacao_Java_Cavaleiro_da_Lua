@@ -19,7 +19,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".inicio_activity"
+            android:name=".inicio_Activity"
             android:exported="false" />
         <activity
             android:name=".mapa_activity"
@@ -34,7 +34,7 @@
             android:name=".sensor_Activity"
             android:exported="false" />
         <activity
-            android:name=".resultado_quiz"
+            android:name=".resultado_Activity"
             android:exported="false" />
         <activity
             android:name=".quiz_Activity"

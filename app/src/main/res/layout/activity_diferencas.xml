@@ -27,7 +27,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/hamburger"
-            android:onClick="voltarMenu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -77,13 +76,12 @@
                     tools:layout_editor_absoluteY="74dp" />
 
                 <Button
-                    android:id="@+id/btn_Comprar"
+                    android:id="@+id/btn_hq1"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginTop="50dp"
                     android:layout_weight="1"
                     android:background="@color/teal_700"
-                    android:onClick="btn_hq1"
                     android:text="@string/btn_Comprar"
                     android:textColor="@color/branco" />
 
@@ -116,12 +114,12 @@
                     tools:layout_editor_absoluteY="257dp" />
 
                 <Button
+                    android:id="@+id/btn_hq2"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginTop="50dp"
                     android:layout_weight="1"
                     android:background="@color/teal_700"
-                    android:onClick="btn_hq2"
                     android:text="@string/btn_Comprar"
                     android:textColor="@color/branco" />
 
@@ -154,13 +152,12 @@
                     tools:layout_editor_absoluteY="625dp" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_hq3"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginTop="50dp"
                     android:layout_weight="1"
                     android:background="@color/teal_700"
-                    android:onClick="btn_hq3"
                     android:text="@string/btn_Comprar"
                     android:textColor="@color/branco" />
 
@@ -192,13 +189,12 @@
                     tools:layout_editor_absoluteY="447dp" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/btn_hq4"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginTop="50dp"
                     android:layout_weight="1"
                     android:background="@color/teal_700"
-                    android:onClick="btn_hq4"
                     android:text="@string/btn_Comprar"
                     android:textColor="@color/branco" />
 

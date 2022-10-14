@@ -7,6 +7,7 @@
     android:background="@drawable/background_quiz"
     tools:context=".quiz_Activity">
 
+    <include layout="@layout/navbar_layout"/>
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="333dp"
@@ -67,7 +68,6 @@
         android:layout_width="122dp"
         android:layout_height="66dp"
         android:backgroundTint="@color/amarelo_lua"
-        android:onClick="proximaPergunta"
         android:text="@string/btn_proxima_pergunta"
         android:textColor="@color/branco"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,34 +119,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/preto"
-        android:elevation="2dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0">
-
-        <Button
-            android:id="@+id/btn_menu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/hamburger"
-            android:onClick="voltarMenu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
-    </androidx.appcompat.widget.Toolbar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

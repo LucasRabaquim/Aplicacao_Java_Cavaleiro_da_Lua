@@ -6,126 +6,134 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class quiz_Activity extends AppCompatActivity {
 
-    // Os radio buttons das perguntas, para saberoms qual o usuário marcou.
-    RadioButton rd1, rd2, rd3, rd4;
-
-    // Imagem da pergunta
+    // Declarando elementos do design.
+    RadioButton rd1;
+    RadioButton rd2;
+    RadioButton rd3;
+    RadioButton rd4;
     ImageView view_imagem;
+    TextView view_txt_pergunta;
+    TextView view_txt_acertos;
 
-    //A pergunta e a quantidade e acertos
-    TextView view_txt_pergunta,view_txt_acertos;
+    // Variaveis globais com o numero da pergunta e a quantidade de acertos.
+    int pergunta_atual;
+    int acertos;
 
-    // Array para guardar o texto de cada pergunta
-    int[] texto_pergunta = {
-            R.string.txt_pergunta1,
-            R.string.txt_pergunta2,
-            R.string.txt_pergunta3,
-            R.string.txt_pergunta4,
-            R.string.txt_pergunta5,
-            R.string.txt_pergunta6
-    };
-
-    // Array bidimensional para guardar o texto de cara alternativa
-    int[][] alternativa_pergunta ={
-            {R.string.txt_alternativa_pergunta_0_0,R.string.txt_alternativa_pergunta_0_1,R.string.txt_alternativa_pergunta_0_2,R.string.txt_alternativa_pergunta_0_3},
-            {R.string.txt_alternativa_pergunta_1_0,R.string.txt_alternativa_pergunta_1_1,R.string.txt_alternativa_pergunta_1_2,R.string.txt_alternativa_pergunta_1_3},
-            {R.string.txt_alternativa_pergunta_2_0,R.string.txt_alternativa_pergunta_2_1,R.string.txt_alternativa_pergunta_2_2,R.string.txt_alternativa_pergunta_2_3},
-            {R.string.txt_alternativa_pergunta_3_0,R.string.txt_alternativa_pergunta_3_1,R.string.txt_alternativa_pergunta_3_2,R.string.txt_alternativa_pergunta_3_3},
-            {R.string.txt_alternativa_pergunta_4_0,R.string.txt_alternativa_pergunta_4_1,R.string.txt_alternativa_pergunta_4_2,R.string.txt_alternativa_pergunta_4_3},
-            {R.string.txt_alternativa_pergunta_5_0,R.string.txt_alternativa_pergunta_5_1,R.string.txt_alternativa_pergunta_5_2,R.string.txt_alternativa_pergunta_5_3}
-    };
-
-    // Marca em qual questão estamos e o número de acertos
-    int pergunta_atual = 0, acertos = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        // Até view_txt_acertos: pegando o id para usar as views
+
+        // "Ligando" o design com o código.
         rd1 = findViewById(R.id.rd_resposta1);
         rd2 = findViewById(R.id.rd_resposta2);
         rd3 = findViewById(R.id.rd_resposta3);
         rd4 = findViewById(R.id.rd_resposta4);
+        Button btn_pergunta = findViewById(R.id.btn_proxima);
+        Button btn_menu = findViewById(R.id.btn_menu);
         view_imagem = findViewById(R.id.img_quiz);
         view_txt_pergunta = findViewById(R.id.txt_quiz);
         view_txt_acertos = findViewById(R.id.txt_acertos);
 
-        // Array com os radio buttons para facilitar colocar o texto nas alternativas;
-        RadioButton[] rd_pergunta = {rd1, rd2, rd3, rd4};
+        // Chamando funções
+        PegarDados();
+        CriarPergunta();
 
-        // Array para facilitar colocar as imagens
-        int[] imagem = {
-                R.drawable.quiz_pergunta1,
-                R.drawable.quiz_pergunta2,
-                R.drawable.quiz_pergunta3,
-                R.drawable.quiz_pergunta4,
-                R.drawable.quiz_pergunta5,
-                R.drawable.quiz_pergunta6
+        // Método que o botão vai chamar quando for clicado
+        btn_pergunta.setOnClickListener(view -> {
+            if(!(rd1.isChecked() || rd2.isChecked() || rd3.isChecked()|| rd4.isChecked())){
+                MostrarErro();
+            }
+            else {
+                VerificarResposta();
+                proximaPergunta();
+            }
+        });
+
+        // Botão de Sair
+        btn_menu.setOnClickListener(view -> {
+            Intent intent = new Intent(quiz_Activity.this, menu_Activity.class);
+            startActivity(intent);
+        });
+    }
+
+    void PegarDados() {
+        Intent dadosIntent = getIntent();
+        pergunta_atual = dadosIntent.getIntExtra(quiz_Activity.EXTRA_PERGUNTA,0);
+        acertos = dadosIntent.getIntExtra(quiz_Activity.EXTRA_ACERTO,0);
+        view_txt_acertos.setText(getResources().getString(R.string.acertos, acertos));
+    }
+
+    void CriarPergunta(){
+
+        int[] alternativas = {
+                R.array.txt_alternativa_1, R.array.txt_alternativa_2, R.array.txt_alternativa_3,
+                R.array.txt_alternativa_4, R.array.txt_alternativa_5, R.array.txt_alternativa_6
         };
 
-        // Capa pergunta é uma activity usando a mesma tela e o mesmo código, a linha abaixo é para pegar os valores passados
-        Intent dadosIntent = getIntent();
+        int[] imagem = {
+                R.drawable.quiz_pergunta1, R.drawable.quiz_pergunta2, R.drawable.quiz_pergunta3,
+                R.drawable.quiz_pergunta4, R.drawable.quiz_pergunta5, R.drawable.quiz_pergunta6
+        };
 
-        // Pega a pergunta atual, se viemos do menu não passamos nada, por isso o 0 como valor padrão.
-        pergunta_atual = dadosIntent.getIntExtra(quiz_Activity.EXTRA_PERGUNTA,0);
+        String[] txt_pergunta = getResources().getStringArray(R.array.txt_pergunta);
+        String[] alternativa = getResources().getStringArray(alternativas[pergunta_atual]);
 
-        // Pega o número de acertos
-        acertos = dadosIntent.getIntExtra(quiz_Activity.EXTRA_ACERTO,0);
+        rd1.setText(alternativa[0]);
+        rd2.setText(alternativa[1]);
+        rd3.setText(alternativa[2]);
+        rd4.setText(alternativa[3]);
 
-        // Até view_imagem: monta a pergunta para o usuário
-        for(int i = 0; i < 4; i++)
-            rd_pergunta[i].setText(alternativa_pergunta[pergunta_atual][i]);
-        view_txt_pergunta.setText(getResources().getString(texto_pergunta[pergunta_atual]));
+        // Coloca o texto e a imagem na tela respectivamente.
+        view_txt_pergunta.setText(txt_pergunta[pergunta_atual]);
         view_imagem.setImageResource(imagem[pergunta_atual]);
-
-        // Mostra o número de acertos
-        view_txt_acertos.setText(getResources().getString(R.string.acertos) + acertos + getResources().getString(R.string.seis));
     }
 
     // As duas linhas abaixo são os parâmetros que vamos passar para a proxima Activity
     static public final String EXTRA_PERGUNTA = ".pergunta";
     static public final String EXTRA_ACERTO = ".acerto";
 
-    public void proximaPergunta(View view) {
-        // Guarda quais alternativas são as certas para cada questão
-        RadioButton[] rd_resposta = {rd1, rd3, rd4, rd1, rd2, rd4};
-
-        // Se o usuário marcou o radio button certo, ele acertou uma questão
-        if(rd_resposta[pergunta_atual].isChecked())
-            acertos++;
-        if(!(rd1.isChecked() || rd2.isChecked() || rd3.isChecked()|| rd4.isChecked())){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.msgbox_quiz_texto).setTitle(R.string.msgbox_quiz_titulo);
-            builder.create().show();
-        }
-        // Se já é a 5 (6) pergunta vai para a tela de resultado
-        else if(pergunta_atual == 5){
-            Intent intent = new Intent(this, resultado_quiz.class);
-            intent.putExtra(EXTRA_ACERTO, acertos);
-            startActivity(intent);
-        }
-        else {
-            pergunta_atual++;
-
-            // Instancia a proxima tela
-            Intent intent = new Intent(this, quiz_Activity.class);
-
-            // Coloca valores nos parâmetros declarados anteriormente
-            intent.putExtra(EXTRA_PERGUNTA, pergunta_atual);
-            intent.putExtra(EXTRA_ACERTO, acertos);
-
-            // Inicia a proxima activity
-            startActivity(intent);
-        }
+    // Mensagem de erro
+    void MostrarErro(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.msgbox_quiz_texto).setTitle(R.string.msgbox_quiz_titulo);
+        builder.create().show();
     }
-    public void voltarMenu(View view){
-        Intent intent = new Intent(this, menu_Activity.class);
+
+    // Verifica se o usuário acertou a questão
+    void VerificarResposta(){
+        RadioButton[] rd_resposta = {
+                rd1, rd3, rd4, rd1, rd2, rd4
+        };
+        /* Na primeira pergunta a primeira alternativa é a certa, logo esse código quer dizer:
+           Se o radio button da primeira questão (rd_resposta[0]) estiver marcado ele acertou!
+        */
+        if(rd_resposta[pergunta_atual].isChecked()){
+            acertos++;
+        }
+        pergunta_atual++;
+    }
+
+    void proximaPergunta(){
+        Intent intent;
+        if(pergunta_atual == 6){
+            intent = new Intent(this, resultado_Activity.class);
+            // Não queremos saber o número da questão na tela de resultado.
+        }
+        else{
+            intent = new Intent(this, quiz_Activity.class);
+            intent.putExtra(EXTRA_PERGUNTA, pergunta_atual);
+            // Precisamos saber o numero da questão para poder mostrar a próxima.
+        }
+        // Sempre vamos querer saber o número de acertos.
+        intent.putExtra(EXTRA_ACERTO, acertos);
         startActivity(intent);
     }
 }

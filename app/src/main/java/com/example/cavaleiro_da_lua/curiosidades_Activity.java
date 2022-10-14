@@ -1,96 +1,92 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
+
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class curiosidades_Activity extends AppCompatActivity {
 
-    ImageView view_imagem1;
-    ImageView view_imagem2;
+    ImageView img_fase_lua;
+    ImageView img_curio;
     TextView view_txt_curio;
-
-    int Curio_atual = 0;
-    int[] texto_Curio = {R.string.txt_curio1, R.string.txt_curio2, R.string.txt_curio3, R.string.txt_curio4};
-    int[] perguntas = {R.string.txt_curio_perguntas1, R.string.txt_curio_perguntas2,R.string.txt_curio_perguntas3,R.string.txt_curio_perguntas4};
-
-
+    int index_curio;
+    static public final String EXTRA_CURIO = ".curiosidade";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curiosidades);
         view_txt_curio = findViewById(R.id.txt_Curio);
-        view_imagem1 = findViewById(R.id.img_Curio2);
-        view_imagem2 = findViewById(R.id.img_Curio);
-        int transtorno = R.drawable.transtorno;
-        int traje = R.drawable.traje;
-        int origem = R.drawable.origem;
-        int poderes = R.drawable.poderes;
-        int luanova = R.drawable.nova;
-        int luacrescente = R.drawable.crescente;
-        int luaminguante = R.drawable.minguante;
-        int luacheia = R.drawable.cheia;
+        img_fase_lua = findViewById(R.id.img_lua);
+        img_curio = findViewById(R.id.img_curio);
+
+        Button btn_menu = findViewById(R.id.btn_menu);
+        ImageButton btn_proxima = findViewById(R.id.btn_curio_proxima);
+        ImageButton btn_anterior = findViewById(R.id.btn_curio_anterior);
+        Button btn_compartilhar = findViewById(R.id.btn_compartilhar);
 
         Intent dadosIntent = getIntent();
-        Curio_atual = dadosIntent.getIntExtra(curiosidades_Activity.EXTRA_CURIO,0);
-        if(Curio_atual == 0){
-            view_imagem2.setImageResource(transtorno);
-            view_imagem1.setImageResource(luanova);
-        }
-        else if(Curio_atual == 1) {
-            view_imagem2.setImageResource(poderes);
-            view_imagem1.setImageResource(luacrescente);
-        }
-        else if(Curio_atual == 2) {
-            view_imagem2.setImageResource(traje);
-            view_imagem1.setImageResource(luaminguante);
-        }
-        else{
-            view_imagem2.setImageResource(origem);
-            view_imagem1.setImageResource(luacheia);
-        }
-        view_txt_curio.setText(getResources().getString(texto_Curio[Curio_atual]));
+        index_curio = dadosIntent.getIntExtra(curiosidades_Activity.EXTRA_CURIO,0);
+
+        mostrar_curiosidade();
+        btn_proxima.setOnClickListener(view -> {
+            index_curio++;
+            if(index_curio > 3) {
+                index_curio = 0;
+            }
+            trocar_curiosidade();
+        });
+        btn_anterior.setOnClickListener(view -> {
+            index_curio--;
+            if(index_curio < 0){
+                index_curio = 3;
+            }
+            trocar_curiosidade();
+        });
+
+        btn_compartilhar.setOnClickListener(view -> {
+            compartilhar();
+        });
+
+        btn_menu.setOnClickListener(view -> {
+            Intent intent = new Intent(curiosidades_Activity.this, menu_Activity.class);
+            startActivity(intent);
+        });
     }
 
-    static public final String EXTRA_CURIO = ".curiosidade";
+    private void mostrar_curiosidade(){
+        String[] txt_curio = getResources().getStringArray(R.array.txt_curio);
+        int[] fases_lua = {
+                R.drawable.nova, R.drawable.crescente, R.drawable.minguante, R.drawable.cheia
+        };
+        int[] curio = {
+                R.drawable.transtorno, R.drawable.traje, R.drawable.origem, R.drawable.poderes
+        };
+        img_fase_lua.setImageResource(fases_lua[index_curio]);
+        img_curio.setImageResource(curio[index_curio]);
+        view_txt_curio.setText(txt_curio[index_curio]);
 
-    public void proxima(View view){
-        Curio_atual++;
-        if(Curio_atual > 3)
-            Curio_atual = 0;
+    }
+
+    private void trocar_curiosidade(){
         Intent intent = new Intent(this, curiosidades_Activity.class);
-        intent.putExtra(EXTRA_CURIO, Curio_atual);
+        intent.putExtra(EXTRA_CURIO, index_curio);
         startActivity(intent);
     }
-    public void anterior(View view){
-        Curio_atual--;
-        if(Curio_atual < 0)
-            Curio_atual = 3;
-        Intent intent = new Intent(this, curiosidades_Activity.class);
-        intent.putExtra(EXTRA_CURIO, Curio_atual);
-        startActivity(intent);
-    }
 
-    public void compartilhar(View view) {
+    private void compartilhar() {
+        String[] txt_curio_perguntas = getResources().getStringArray(R.array.txt_curio_pergunta);
         Intent intentCompartilhar = new Intent();
         intentCompartilhar.setAction(Intent.ACTION_SEND);
-        String mensagem = getResources().getString(perguntas[Curio_atual]);
+        String mensagem = txt_curio_perguntas[index_curio];
         intentCompartilhar.putExtra(Intent.EXTRA_TEXT, mensagem);
         intentCompartilhar.setType("text/plain");
         startActivity(intentCompartilhar);
     }
 
-
-
-    public void voltarMenu(View view){
-        Intent intent = new Intent(this, menu_Activity.class);
-        startActivity(intent);
-    }
 }
