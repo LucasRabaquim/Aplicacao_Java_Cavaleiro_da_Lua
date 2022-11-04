@@ -64,20 +64,20 @@
     <string-array name="txt_curio">
         <item>"1) O transtorno do Cavaleiro da Lua\n
             O personagem sofre de Transtorno Dissociativo
-            de Identidade.\n Seus principais 'eus' são: O taxista Jack Lockey, o milionário Steven
-            Grant, \n e seu eu verdadeiro eu, Marc Spector. Jack Lockey \n aparece somente no último
+            de Identidade.Seus principais 'eus' são: O taxista Jack Lockey, o milionário Steven
+            Grant, e seu eu verdadeiro eu, Marc Spector. Jack Lockey aparece somente no último
             ep, durante as cenas pós-créditos."</item>
         <item>"2) Seus poderes\n
             Ao aceitar o pacto com Khonshu, Marc ganha poderes como: visão
-            noturna,\n a habilidade de enxergar o plano lunar, etc. \nTudo isso se modifica de
-            acordo \n com as fases da lua."</item>
+            noturna, a habilidade de enxergar o plano lunar, etc. Tudo isso se modifica de
+            acordo com as fases da lua."</item>
         <item>"3) Por que seu traje é branco?\n
-            Muitos super heróis se vestem com trajes discretos,\n com cores como preto, para
-            passarem despercebidos. Diferentes desses,\n o cavaleiro da lua se veste de branco,\n
+            Muitos super heróis se vestem com trajes discretos, com cores como preto, para
+            passarem despercebidos. Diferentes desses, o cavaleiro da lua se veste de branco,\n
             justamente para que seus inimigos o percebam."</item>
         <item>"4) A origem Judaica \n
-            A família de Marc Spector teve que fugir\n da Europa durante a perseguição aos judeus
-            na\n Segunda Guerra Mundial. Encontraram refúgio nos Estados Unidos e\n Marc cresceu
+            A família de Marc Spector teve que fugir da Europa durante a perseguição aos judeus
+            na Segunda Guerra Mundial. Encontraram refúgio nos Estados Unidos e Marc cresceu
             segundo os ensinamentos de seu pai rabino."</item>
     </string-array>
     <string-array name="txt_curio_pergunta">
@@ -90,8 +90,8 @@
         <item>"Você sabia: Qual a origem da família do cavaleiro da lua?\n
             Baixe o app Cavaleiro da Lua para saber mais."</item>
     </string-array>
-
-    <string name="txt_formatar_distancia">"A distância é de:\n %1$f Km."</string>
+    <string name="chooser_compartilhar">Escolha um app para compartilhar…</string>
+    <string name="txt_formatar_distancia">"A distância é de:\n %6.2f Km."</string>
     <string name="txt_iniciar_balanca"> Parar a balança</string>
     <string name="txt_parar_balanca"> Iniciar a balança</string>
     <string-array name="txt_sensor">
@@ -101,7 +101,6 @@
         <item>Mark</item>
         <item>Moon Knight</item>
     </string-array>
-
 
     <string-array name="txt_pergunta">
         <item>1) Onde Steven Grant trabalha?</item>

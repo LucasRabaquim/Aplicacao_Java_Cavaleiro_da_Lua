@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class curiosidades_Activity extends AppCompatActivity {
 
     ImageView img_fase_lua;
@@ -28,7 +30,7 @@ public class curiosidades_Activity extends AppCompatActivity {
         Button btn_menu = findViewById(R.id.btn_menu);
         ImageButton btn_proxima = findViewById(R.id.btn_curio_proxima);
         ImageButton btn_anterior = findViewById(R.id.btn_curio_anterior);
-        Button btn_compartilhar = findViewById(R.id.btn_compartilhar);
+        FloatingActionButton btn_compartilhar = findViewById(R.id.btn_compartilhar);
 
         Intent dadosIntent = getIntent();
         index_curio = dadosIntent.getIntExtra(curiosidades_Activity.EXTRA_CURIO,0);
@@ -49,9 +51,7 @@ public class curiosidades_Activity extends AppCompatActivity {
             trocar_curiosidade();
         });
 
-        btn_compartilhar.setOnClickListener(view -> {
-            compartilhar();
-        });
+        btn_compartilhar.setOnClickListener(view -> compartilhar());
 
         btn_menu.setOnClickListener(view -> {
             Intent intent = new Intent(curiosidades_Activity.this, menu_Activity.class);
@@ -86,7 +86,7 @@ public class curiosidades_Activity extends AppCompatActivity {
         String mensagem = txt_curio_perguntas[index_curio];
         intentCompartilhar.putExtra(Intent.EXTRA_TEXT, mensagem);
         intentCompartilhar.setType("text/plain");
-        startActivity(intentCompartilhar);
+        startActivity(Intent.createChooser(intentCompartilhar, getString(R.string.chooser_compartilhar)));
     }
 
 }

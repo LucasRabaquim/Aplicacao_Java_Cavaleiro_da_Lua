@@ -16,6 +16,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class mapa_activity extends AppCompatActivity{
 
     // Declarando elementos do design
@@ -39,18 +41,14 @@ public class mapa_activity extends AppCompatActivity{
         rd4 = findViewById(R.id.rd4_local);
         Button btn_menu = findViewById(R.id.btn_menu);
         Button btn_local = findViewById(R.id.btn_hq3);
-        Button btn_mapa = findViewById(R.id.btn_mapa);
+        FloatingActionButton btn_mapa = findViewById(R.id.btn_mapa);
 
         btn_menu.setOnClickListener(view -> {
             Intent intent = new Intent(mapa_activity.this, menu_Activity.class);
             startActivity(intent);
         });
-        btn_local.setOnClickListener(view -> {
-            mostrarLocal();
-        });
-        btn_mapa.setOnClickListener(view -> {
-          mostrarMapa();
-        });
+        btn_local.setOnClickListener(view -> mostrarLocal());
+        btn_mapa.setOnClickListener(view -> mostrarMapa());
     }
 
     private void verificarPermissao(){

@@ -9,7 +9,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,7 +22,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
     TextView view_texto, txt_switch;
     ImageView view_imagem;
     SwitchCompat btn_switch;
-    Button btn_menu;
+
 
     // Variaveis para mexer nos sensores
     SensorManager sensorManager;
@@ -39,13 +41,13 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
         view_imagem = findViewById(R.id.img_sensor);
         btn_switch = findViewById(R.id.btn_switch);
         txt_switch = findViewById(R.id.txt_switch);
-
+        Button btn_menu = findViewById(R.id.btn_menu);
         // Escolhe o sensor do dispositivo. Se tiver giroscopio usa ele, se não usa o acelerometro.
         // Se não tiver nenhum dos dois, não vai usar sensor.
-        definirSensor();
 
         // O parâmetro "checado" é para verificar se o botão switch está checado ou não.
         btn_switch.setOnCheckedChangeListener((compoundButton, checado) -> {
+            definirSensor();
             // Se tiver sensor
             if(sensor != null){
                 // Reseta a inclinação toda ves que é clicado.
@@ -68,7 +70,6 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
 
     public void definirSensor(){
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        sensorManager.registerListener( this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
         if (sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null) {
             sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         }
@@ -78,6 +79,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
         else {
             sensor = null;
         }
+        sensorManager.registerListener( this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     private void erro() {
@@ -116,7 +118,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
             }
             mudarInformacoes(index_mensagem);
             // Por favor Ler linha 137
-        }
+    }
 
     public void mudarInformacoes(int index){
         int[] imagem = {
