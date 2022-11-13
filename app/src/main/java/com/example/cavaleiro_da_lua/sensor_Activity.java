@@ -9,9 +9,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -94,28 +92,23 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
             Float[] angulos;
             if(sensor == sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
                 inclinacao += event.values[2];
-                angulos = new Float[]{-16f, -8f, 8f, 16f, 24f};
+                angulos = new Float[]{-6f, -4f, 2f, 4f, 7f};
             }
             else{
                 inclinacao = event.values[0];
-                angulos = new Float[]{-6f, -3f, 3f, 6f, 10f};
+                angulos = new Float[]{-5f, -3f, 1f, 3f, 7f};
             }
             int index_mensagem;
-            if(inclinacao < angulos[0]){
+            if(inclinacao < angulos[0])
                 index_mensagem = 0;
-            }
-            else if(inclinacao < angulos[1]){ // Mesma coisa de, por ex: "se está entre -16f e -8f"
+            else if(inclinacao < angulos[1]) // Mesma coisa de, por ex: "se está entre -16f e -8f"
                 index_mensagem = 1;
-            }
-            else if(inclinacao < angulos[2]){
+            else if(inclinacao < angulos[2])
                 index_mensagem = 2;
-            }
-            else if(inclinacao < angulos[3]){
+            else if(inclinacao < angulos[3])
                 index_mensagem = 3;
-            }
-            else {
+            else
                 index_mensagem = 4;
-            }
             mudarInformacoes(index_mensagem);
             // Por favor Ler linha 137
     }
