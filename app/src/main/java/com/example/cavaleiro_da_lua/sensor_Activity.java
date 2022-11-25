@@ -10,6 +10,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,7 +41,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
         view_imagem = findViewById(R.id.img_sensor);
         btn_switch = findViewById(R.id.btn_switch);
         txt_switch = findViewById(R.id.txt_switch);
-        Button btn_menu = findViewById(R.id.btn_menu);
+
         // Escolhe o sensor do dispositivo. Se tiver giroscopio usa ele, se não usa o acelerometro.
         // Se não tiver nenhum dos dois, não vai usar sensor.
 
@@ -60,10 +62,7 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
             }
         });
 
-        btn_menu.setOnClickListener(view -> {
-            Intent intent = new Intent(sensor_Activity.this, menu_Activity.class);
-            startActivity(intent);
-        });
+
     }
 
     public void definirSensor(){
@@ -125,6 +124,44 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.item1:
+                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
+                break;
+            case R.id.item2:
+                intent = new Intent(getApplicationContext(), mapa_activity.class);
+                break;
+            case R.id.item3:
+                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
+                break;
+            case R.id.item4:
+                intent = new Intent(getApplicationContext(), sensor_Activity.class);
+                break;
+            case R.id.item5:
+                intent = new Intent(getApplicationContext(), quiz_Activity.class);
+                break;
+            case R.id.item6:
+                intent = new Intent(getApplicationContext(),tema_Activity.class);
+                break;
+	    case R.id.item7:
+                intent = new Intent(getApplicationContext(),inicio_Activity.class);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 }
 

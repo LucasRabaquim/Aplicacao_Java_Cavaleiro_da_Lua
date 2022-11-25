@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,10 +29,10 @@ public class curiosidades_Activity extends AppCompatActivity {
         img_fase_lua = findViewById(R.id.img_lua);
         img_curio = findViewById(R.id.img_curio);
 
-        Button btn_menu = findViewById(R.id.btn_menu);
+
         ImageButton btn_proxima = findViewById(R.id.btn_curio_proxima);
         ImageButton btn_anterior = findViewById(R.id.btn_curio_anterior);
-        FloatingActionButton btn_compartilhar = findViewById(R.id.btn_compartilhar);
+
 
         Intent dadosIntent = getIntent();
         index_curio = dadosIntent.getIntExtra(curiosidades_Activity.EXTRA_CURIO,0);
@@ -51,12 +53,8 @@ public class curiosidades_Activity extends AppCompatActivity {
             trocar_curiosidade();
         });
 
-        btn_compartilhar.setOnClickListener(view -> compartilhar());
 
-        btn_menu.setOnClickListener(view -> {
-            Intent intent = new Intent(curiosidades_Activity.this, menu_Activity.class);
-            startActivity(intent);
-        });
+
     }
 
     private void mostrar_curiosidade(){
@@ -87,6 +85,45 @@ public class curiosidades_Activity extends AppCompatActivity {
         intentCompartilhar.putExtra(Intent.EXTRA_TEXT, mensagem);
         intentCompartilhar.setType("text/plain");
         startActivity(Intent.createChooser(intentCompartilhar, getString(R.string.chooser_compartilhar)));
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        menu.add(Menu.NONE, 8, Menu.NONE, "Compartilhar");
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.item1:
+                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
+                break;
+            case R.id.item2:
+                intent = new Intent(getApplicationContext(), mapa_activity.class);
+                break;
+            case R.id.item3:
+                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
+                break;
+            case R.id.item4:
+                intent = new Intent(getApplicationContext(), sensor_Activity.class);
+                break;
+            case R.id.item5:
+                intent = new Intent(getApplicationContext(), quiz_Activity.class);
+                break;
+            case R.id.item6:
+                intent = new Intent(getApplicationContext(),inicio_Activity.class);
+                break;
+            case 8:
+                compartilhar();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 
 }

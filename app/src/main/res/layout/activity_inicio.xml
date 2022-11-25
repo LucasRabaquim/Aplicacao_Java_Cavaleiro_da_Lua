@@ -7,60 +7,33 @@
     android:background="@drawable/background_menu"
     tools:context=".inicio_Activity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="@color/preto"
-        android:elevation="2dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <Button
-        android:id="@+id/btn_menu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="66dp"
-        android:background="@drawable/hamburger"
-        android:onClick="voltarMenu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0" />
 
     <TextView
         android:id="@+id/inicio_titulo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginBottom="26dp"
         android:background="@color/preto"
         android:text="@string/txt_inicio_titulo"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:layout_marginBottom="66dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inicio_titulo">
+        app:layout_constraintTop_toBottomOf="@+id/inicio_titulo"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,17 +60,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="170dp"
                             android:scaleType="centerCrop"
-                            tools:srcCompat="@drawable/noticia1"
-                            app:srcCompat="@drawable/noticia1"/>
+                            app:srcCompat="@drawable/noticia1"
+                            tools:srcCompat="@drawable/noticia1" />
 
                         <TextView
+                            android:id="@+id/txt_noticia1"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="@color/azul"
-                            android:id="@+id/txt_noticia1"
+                            android:linksClickable="true"
                             android:text="@string/txt_noticia1"
                             android:textAlignment="center"
-                            android:linksClickable="true"
                             android:textColor="@color/white"
                             android:textColorLink="@color/teal_200"
                             android:textSize="20sp" />
@@ -114,17 +87,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="170dp"
                             android:scaleType="centerCrop"
-                            tools:srcCompat="@drawable/noticia2"
-                            app:srcCompat="@drawable/noticia2"/>
+                            app:srcCompat="@drawable/noticia2"
+                            tools:srcCompat="@drawable/noticia2" />
 
                         <TextView
+                            android:id="@+id/txt_noticia2"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="@color/azul"
-                            android:id="@+id/txt_noticia2"
+                            android:linksClickable="true"
                             android:text="@string/txt_noticia2"
                             android:textAlignment="center"
-                            android:linksClickable="true"
                             android:textColor="@color/white"
                             android:textColorLink="@color/teal_200"
                             android:textSize="20sp" />
@@ -141,17 +114,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="170dp"
                             android:scaleType="centerCrop"
-                            tools:srcCompat="@drawable/noticia3"
-                            app:srcCompat="@drawable/noticia3"/>
+                            app:srcCompat="@drawable/noticia3"
+                            tools:srcCompat="@drawable/noticia3" />
 
                         <TextView
+                            android:id="@+id/txt_noticia3"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="@color/azul"
-                            android:id="@+id/txt_noticia3"
+                            android:linksClickable="true"
                             android:text="@string/txt_noticia3"
                             android:textAlignment="center"
-                            android:linksClickable="true"
                             android:textColor="@color/white"
                             android:textColorLink="@color/teal_200"
                             android:textSize="20sp" />
@@ -166,6 +139,7 @@
         android:id="@+id/textView2"
         android:layout_width="320dp"
         android:layout_height="212dp"
+        android:layout_marginBottom="4dp"
         android:background="@color/pretoTransparente"
         android:text="@string/txt_inicio"
         android:textAlignment="center"
@@ -175,6 +149,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.876" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
 </androidx.constraintlayout.widget.ConstraintLayout>

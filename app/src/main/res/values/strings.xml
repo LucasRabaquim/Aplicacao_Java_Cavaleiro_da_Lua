@@ -164,4 +164,6 @@
     <string name="btn_aplicar">Aplicar</string>
     <string name="claro">Claro</string>
     <string name="escuro">Escuro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="btn_tema">Tema</string>
 </resources>

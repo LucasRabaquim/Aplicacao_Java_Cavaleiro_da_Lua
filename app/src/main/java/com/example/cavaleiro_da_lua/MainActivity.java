@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         botao = findViewById(R.id.btn_entrar);
         barra = findViewById(R.id.progressBar_entrar);
-
     }
 
     /* Botão para entrar, esconde o botão e mostra a barra de carregamento, mudando de tela após

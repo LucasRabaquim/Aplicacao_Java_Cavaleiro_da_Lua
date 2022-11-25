@@ -1,12 +1,13 @@
 package com.example.cavaleiro_da_lua;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class inicio_Activity extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class inicio_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        // Pegando o id das TextViews para "Ativar a funcionalidade do link"
+        // Pegando o id das TextViews para "Ativar a functionalism do link"
         TextView txt_noticia1 = findViewById(R.id.txt_noticia1);
         TextView txt_noticia2 = findViewById(R.id.txt_noticia2);
         TextView txt_noticia3 = findViewById(R.id.txt_noticia3);
@@ -23,9 +24,40 @@ public class inicio_Activity extends AppCompatActivity {
         txt_noticia3.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    // Botão para acessar o menu, intent explicita.
-    public void voltarMenu(View view){
-        Intent intent = new Intent(this, menu_Activity.class);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        Intent intent;
+         switch(item.getItemId()){
+             case R.id.item1:
+                 intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
+                 break;
+             case R.id.item2:
+                 intent = new Intent(getApplicationContext(), mapa_activity.class);
+                 break;
+             case R.id.item3:
+                 intent = new Intent(getApplicationContext(), diferencas_Activity.class);
+                 break;
+             case R.id.item4:
+                 intent = new Intent(getApplicationContext(), sensor_Activity.class);
+                 break;
+             case R.id.item5:
+                 intent = new Intent(getApplicationContext(), quiz_Activity.class);
+                 break;
+            case R.id.item6:
+                intent = new Intent(getApplicationContext(),tema_Activity.class);
+                break;
+	    case R.id.item7:
+                intent = new Intent(getApplicationContext(),inicio_Activity.class);
+                break;
+             default:
+                 return super.onOptionsItemSelected(item);
+         }
         startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 }

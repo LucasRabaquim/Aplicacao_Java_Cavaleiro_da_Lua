@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,7 +39,6 @@ public class quiz_Activity extends AppCompatActivity {
         rd3 = findViewById(R.id.rd_resposta3);
         rd4 = findViewById(R.id.rd_resposta4);
         Button btn_pergunta = findViewById(R.id.btn_proxima);
-        Button btn_menu = findViewById(R.id.btn_menu);
         view_imagem = findViewById(R.id.img_quiz);
         view_txt_pergunta = findViewById(R.id.txt_quiz);
         view_txt_acertos = findViewById(R.id.txt_acertos);
@@ -57,11 +58,7 @@ public class quiz_Activity extends AppCompatActivity {
             }
         });
 
-        // Botão de Sair
-        btn_menu.setOnClickListener(view -> {
-            Intent intent = new Intent(quiz_Activity.this, menu_Activity.class);
-            startActivity(intent);
-        });
+        //
     }
 
     void PegarDados() {
@@ -135,5 +132,43 @@ public class quiz_Activity extends AppCompatActivity {
         // Sempre vamos querer saber o número de acertos.
         intent.putExtra(EXTRA_ACERTO, acertos);
         startActivity(intent);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.item1:
+                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
+                break;
+            case R.id.item2:
+                intent = new Intent(getApplicationContext(), mapa_activity.class);
+                break;
+            case R.id.item3:
+                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
+                break;
+            case R.id.item4:
+                intent = new Intent(getApplicationContext(), sensor_Activity.class);
+                break;
+            case R.id.item5:
+                intent = new Intent(getApplicationContext(), quiz_Activity.class);
+                break;
+            case R.id.item6:
+                intent = new Intent(getApplicationContext(),tema_Activity.class);
+                break;
+	    case R.id.item7:
+                intent = new Intent(getApplicationContext(),inicio_Activity.class);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 }

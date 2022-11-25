@@ -7,9 +7,7 @@
     android:background="@drawable/background_quiz"
     tools:context=".resultado_Activity">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/navbar_layout" />
+
     <ImageView
         android:id="@+id/img_resultado"
         android:layout_width="417dp"
@@ -20,24 +18,25 @@
         app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/txt_resultado"
-        android:layout_width="382dp"
-        android:layout_height="63dp"
+        android:layout_width="419dp"
+        android:layout_height="72dp"
         android:background="@color/amarelo_lua"
         android:backgroundTint="@color/amarelo_lua"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_descricao"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/img_resultado"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_voltar"
@@ -65,34 +64,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_resultado"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/screenShot"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:clickable="true"
-        android:cropToPadding="false"
-        android:padding="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/include"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01"
-        app:srcCompat="@drawable/compartilhar" />
 
     <TextView
         android:id="@+id/txt_resultado_quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/placeholder"
         android:textColor="@color/branco"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.792" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_descricao"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

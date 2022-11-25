@@ -10,6 +10,8 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -36,9 +38,7 @@ public class resultado_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado_quiz);
         view_imagem = findViewById(R.id.img_resultado);
-        btn_menu = findViewById(R.id.btn_menu);
         btn_voltar_quiz = findViewById(R.id.btn_voltar);
-        floatingButton = findViewById(R.id.screenShot);
         view_txt_resultado = findViewById(R.id.txt_resultado);
         view_txt_descricao = findViewById(R.id.txt_descricao);
         view_imagem = findViewById(R.id.img_resultado);
@@ -59,10 +59,7 @@ public class resultado_Activity extends AppCompatActivity {
             criarPagina(3);
 
         // Botão de Sair
-        btn_menu.setOnClickListener(view -> {
-            Intent intent = new Intent(resultado_Activity.this, menu_Activity.class);
-            startActivity(intent);
-        });
+
         btn_voltar_quiz.setOnClickListener(view -> {
             Intent intent = new Intent(resultado_Activity.this, quiz_Activity.class);
             startActivity(intent);
@@ -135,6 +132,46 @@ public class resultado_Activity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        menu.add(Menu.NONE, 8, Menu.NONE, "Capturar Tela");
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.item1:
+                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
+                break;
+            case R.id.item2:
+                intent = new Intent(getApplicationContext(), mapa_activity.class);
+                break;
+            case R.id.item3:
+                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
+                break;
+            case R.id.item4:
+                intent = new Intent(getApplicationContext(), sensor_Activity.class);
+                break;
+            case R.id.item5:
+                intent = new Intent(getApplicationContext(), quiz_Activity.class);
+                break;
+            case R.id.item6:
+                intent = new Intent(getApplicationContext(),tema_Activity.class);
+                break;
+	    case R.id.item7:
+                intent = new Intent(getApplicationContext(),inicio_Activity.class);
+                break;
+            case 8:
+                tela();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        startActivity(intent);
+        return false;
+    }
 
 
 
