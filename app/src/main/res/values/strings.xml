@@ -144,7 +144,7 @@
         <item>Na pirâmide de Gize</item>
         <item>No sarcófago de Senfu</item>
         <item>No templo do céu</item>
-        <item>ONa tumba de Alexandre, o Grade</item>
+        <item>Na tumba de Alexandre, o Grade</item>
     </string-array>
     <string name="acertos">Acertos: %1$d/6 </string>
     <string-array name="txt_resultado_quiz">
@@ -152,7 +152,6 @@
         <item>Muito Bom</item>
         <item>Dá pra melhorar</item>
         <item>Qual é?</item>
-        <item>Escolha um navegador</item>
     </string-array>
     <string-array name="txt_descricao_quiz">
         <item>Você é um verdadeiro(a) cavaleiro(a) da lua.</item>
@@ -160,4 +159,9 @@
         <item>Você deve re-assistir a série.</item>
         <item>Você assistiu a série antes? Khonshu está furioso.</item>
     </string-array>
+
+    <string name="tema_titulo">Escolha um tema</string>
+    <string name="btn_aplicar">Aplicar</string>
+    <string name="claro">Claro</string>
+    <string name="escuro">Escuro</string>
 </resources>
