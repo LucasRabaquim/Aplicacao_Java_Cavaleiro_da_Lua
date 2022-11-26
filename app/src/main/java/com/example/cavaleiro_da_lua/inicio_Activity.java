@@ -1,10 +1,12 @@
 package com.example.cavaleiro_da_lua;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,11 @@ public class inicio_Activity extends AppCompatActivity {
         txt_noticia1.setMovementMethod(LinkMovementMethod.getInstance());
         txt_noticia2.setMovementMethod(LinkMovementMethod.getInstance());
         txt_noticia3.setMovementMethod(LinkMovementMethod.getInstance());
+        Tema tema = new Tema();
+        Button[] botoes = {};
+        TextView[] textos = {txt_noticia1,txt_noticia2,txt_noticia3,findViewById(R.id.txt_inicio)};
+        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
+        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
     }
 
     @Override

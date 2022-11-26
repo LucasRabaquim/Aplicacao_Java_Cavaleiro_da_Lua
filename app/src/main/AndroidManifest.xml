@@ -23,39 +23,52 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_aplicativo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:theme="@style/Theme.AppCompat.DayNight"
         tools:targetApi="31">
         <activity
             android:name=".quizMaker_activity"
-            android:exported="false">
+            android:exported="false"
+            android:configChanges="uiMode">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
+            android:name=".tema_Activity"
+            android:exported="false"
+            android:configChanges="uiMode"/>
+        <activity
             android:name=".inicio_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".mapa_activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".curiosidades_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".diferencas_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".sensor_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".resultado_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".quiz_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

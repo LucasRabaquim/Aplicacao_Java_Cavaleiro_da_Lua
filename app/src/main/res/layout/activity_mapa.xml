@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_mapa"
     tools:context=".mapa_activity">
 
 
@@ -25,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
             android:text="@string/rd_museu"
-            android:textColor="@color/branco" />
+            android:textColor="@color/branco1" />
 
         <View
             android:id="@+id/divider8"
@@ -38,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
             android:text="@string/rd_castelo"
-            android:textColor="@color/branco" />
+            android:textColor="@color/branco1" />
 
         <View
             android:id="@+id/divider7"
@@ -51,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
             android:text="@string/rd_cairo"
-            android:textColor="@color/branco" />
+            android:textColor="@color/branco1" />
 
         <View
             android:id="@+id/divider5"
@@ -64,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
             android:text="@string/rd_manicomio"
-            android:textColor="@color/branco" />
+            android:textColor="@color/branco1" />
 
         <View
             android:id="@+id/divider"
@@ -81,7 +80,7 @@
         android:background="@color/pretoTransparente"
         android:text="@string/txt_locais_serie"
         android:textAlignment="center"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +93,7 @@
         android:layout_width="199dp"
         android:layout_height="61dp"
         android:background="@color/pretoTransparente"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +108,7 @@
         android:layout_height="55dp"
         android:background="@color/amarelo_lua"
         android:text="@string/btn_distancia"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.942"

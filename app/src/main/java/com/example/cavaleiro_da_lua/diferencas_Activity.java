@@ -3,12 +3,14 @@ package com.example.cavaleiro_da_lua;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class diferencas_Activity extends AppCompatActivity {
 
@@ -34,6 +36,13 @@ public class diferencas_Activity extends AppCompatActivity {
         btn_hq4.setOnClickListener(view ->
             comprar("https://www.martinsfontespaulista.com.br/moon-knight-by-bendis---maleev-997725/p?idsku=997725&srsltid=AR5OiO1c2GQFWVpdYHKVznDwDSJ6hSQycb1N-Q5xU5F9xYhG8ryAtKgurhs")
         );
+
+        Tema tema = new Tema();
+        Button[] botoes = {btn_hq1,btn_hq2,btn_hq3,btn_hq4};
+        TextView[] textos = {findViewById(R.id.txt_hq1),findViewById(R.id.txt_hq2),findViewById(R.id.txt_hq3),findViewById(R.id.txt_hq4)};
+        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
+        boolean temaAtual = tema.recuperar_tema(settings);
+        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
     }
     // Botões com o link para compra do quadrinho utilizando intent implicita
     private void comprar(String link_site) {
@@ -68,6 +77,9 @@ public class diferencas_Activity extends AppCompatActivity {
                 intent = new Intent(getApplicationContext(), quiz_Activity.class);
                 break;
             case R.id.item6:
+                intent = new Intent(getApplicationContext(),tema_Activity.class);
+                break;
+            case R.id.item7:
                 intent = new Intent(getApplicationContext(),inicio_Activity.class);
                 break;
             default:

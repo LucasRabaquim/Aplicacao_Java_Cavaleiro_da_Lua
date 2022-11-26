@@ -58,8 +58,7 @@
     <string name="chooser_navegador">Escolha um navegador…</string>
 
 
-    <string name="txt_inicio">"Seja bem vindo(a).\n Clique no ícone de menu para navegar pelo
-        aplicativo"</string>
+    <string name="txt_inicio">"Seja bem vindo(a).\n Clique nos 3 pontinhos para navegar pelo aplicativo"</string>
 
     <string-array name="txt_curio">
         <item>"1) O transtorno do Cavaleiro da Lua\n
@@ -164,6 +163,6 @@
     <string name="btn_aplicar">Aplicar</string>
     <string name="claro">Claro</string>
     <string name="escuro">Escuro</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="btn_tema">Tema</string>
 </resources>

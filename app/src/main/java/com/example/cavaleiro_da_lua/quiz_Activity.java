@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,7 +58,16 @@ public class quiz_Activity extends AppCompatActivity {
                 proximaPergunta();
             }
         });
+        Tema tema = new Tema();
+        Button[] botoes = {btn_pergunta};
+        TextView[] textos = {view_txt_pergunta,view_txt_acertos};
+        RadioButton[] radio = {rd1,rd2,rd3,rd4};
+        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
+        boolean temaAtual = tema.recuperar_tema(settings);
 
+        tema.aplicar_tema(getApplicationContext(),settings,this.findViewById(android.R.id.content),botoes,textos);
+        int[] cores = tema.pegarCores(getApplicationContext(),settings);
+        tema.tema_radio(radio,cores[3],cores[2]);
         //
     }
 

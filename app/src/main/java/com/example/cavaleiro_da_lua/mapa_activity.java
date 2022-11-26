@@ -2,6 +2,7 @@ package com.example.cavaleiro_da_lua;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -43,6 +44,13 @@ public class mapa_activity extends AppCompatActivity{
         rd4 = findViewById(R.id.rd4_local);
         Button btn_local = findViewById(R.id.btn_hq3);
         btn_local.setOnClickListener(view -> mostrarLocal());
+
+        Tema tema = new Tema();
+        Button[] botoes = {btn_local};
+        TextView[] textos = {view_local,view_distancia};
+        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
+        boolean temaAtual = tema.recuperar_tema(settings);
+        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
     }
 
     private void verificarPermissao(){

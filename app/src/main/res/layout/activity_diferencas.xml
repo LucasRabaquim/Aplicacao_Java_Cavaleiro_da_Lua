@@ -43,7 +43,7 @@
                     android:layout_width="154dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq1"
-                    android:textColor="@color/branco"
+                    android:textColor="@color/branco1"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="74dp" />
 
@@ -55,7 +55,7 @@
                     android:layout_weight="1"
                     android:background="@color/teal_700"
                     android:text="@string/btn_Comprar"
-                    android:textColor="@color/branco" />
+                    android:textColor="@color/branco1" />
 
             </LinearLayout>
 
@@ -81,7 +81,7 @@
                     android:layout_width="153dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq2"
-                    android:textColor="@color/branco"
+                    android:textColor="@color/branco1"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="257dp" />
 
@@ -93,7 +93,7 @@
                     android:layout_weight="1"
                     android:background="@color/teal_700"
                     android:text="@string/btn_Comprar"
-                    android:textColor="@color/branco" />
+                    android:textColor="@color/branco1" />
 
             </LinearLayout>
 
@@ -119,7 +119,7 @@
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq3"
-                    android:textColor="@color/branco"
+                    android:textColor="@color/branco1"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="625dp" />
 
@@ -131,7 +131,7 @@
                     android:layout_weight="1"
                     android:background="@color/teal_700"
                     android:text="@string/btn_Comprar"
-                    android:textColor="@color/branco" />
+                    android:textColor="@color/branco1" />
 
             </LinearLayout>
 
@@ -152,11 +152,11 @@
                     tools:src="@drawable/loucura" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/txt_hq4"
                     android:layout_width="154dp"
                     android:layout_height="match_parent"
                     android:text="@string/txt_hq4"
-                    android:textColor="@color/branco"
+                    android:textColor="@color/branco1"
                     tools:layout_editor_absoluteX="219dp"
                     tools:layout_editor_absoluteY="447dp" />
 
@@ -168,7 +168,7 @@
                     android:layout_weight="1"
                     android:background="@color/teal_700"
                     android:text="@string/btn_Comprar"
-                    android:textColor="@color/branco" />
+                    android:textColor="@color/branco1" />
 
             </LinearLayout>
 

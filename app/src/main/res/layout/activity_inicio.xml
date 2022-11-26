@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_menu"
     tools:context=".inicio_Activity">
 
 
     <TextView
         android:id="@+id/inicio_titulo"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="26dp"
-        android:background="@color/preto"
+        android:background="@color/preto1"
         android:text="@string/txt_inicio_titulo"
         android:textAlignment="center"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,19 +135,19 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_inicio"
         android:layout_width="320dp"
         android:layout_height="212dp"
         android:layout_marginBottom="4dp"
         android:background="@color/pretoTransparente"
         android:text="@string/txt_inicio"
         android:textAlignment="center"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.212" />
 </androidx.constraintlayout.widget.ConstraintLayout>

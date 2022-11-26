@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_quiz"
     tools:context=".resultado_Activity">
 
 
@@ -44,7 +43,7 @@
         android:layout_height="73dp"
         android:backgroundTint="@color/amarelo_lua"
         android:text="@string/btn_voltar"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +57,7 @@
         android:background="@color/pretoTransparente"
         android:text="@string/placeholder"
         android:textAlignment="center"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/placeholder"
-        android:textColor="@color/branco"
+        android:textColor="@color/branco1"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -3,6 +3,7 @@ package com.example.cavaleiro_da_lua;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,12 +29,8 @@ public class curiosidades_Activity extends AppCompatActivity {
         view_txt_curio = findViewById(R.id.txt_Curio);
         img_fase_lua = findViewById(R.id.img_lua);
         img_curio = findViewById(R.id.img_curio);
-
-
         ImageButton btn_proxima = findViewById(R.id.btn_curio_proxima);
         ImageButton btn_anterior = findViewById(R.id.btn_curio_anterior);
-
-
         Intent dadosIntent = getIntent();
         index_curio = dadosIntent.getIntExtra(curiosidades_Activity.EXTRA_CURIO,0);
 
@@ -52,8 +49,12 @@ public class curiosidades_Activity extends AppCompatActivity {
             }
             trocar_curiosidade();
         });
-
-
+        Tema tema = new Tema();
+        Button[] botoes = {};
+        TextView[] textos = {view_txt_curio};
+        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
+        boolean temaAtual = tema.recuperar_tema(settings);
+        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
 
     }
 
@@ -114,6 +115,9 @@ public class curiosidades_Activity extends AppCompatActivity {
                 intent = new Intent(getApplicationContext(), quiz_Activity.class);
                 break;
             case R.id.item6:
+                intent = new Intent(getApplicationContext(),tema_Activity.class);
+                break;
+            case R.id.item7:
                 intent = new Intent(getApplicationContext(),inicio_Activity.class);
                 break;
             case 8:
