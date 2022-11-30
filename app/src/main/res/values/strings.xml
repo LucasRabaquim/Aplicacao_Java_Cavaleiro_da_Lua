@@ -9,6 +9,7 @@
     <string name="btn_quiz">Quiz</string>--
     <string name="btn_voltar">Voltar</string>
     <string name="btn_inicio">Início</string>
+    <string name="btn_quizMaker">Quiz Maker</string>
     <string name="btn_proxima_pergunta">Próxima</string>
     <string name="placeholder">PlaceHolder</string>
     <string name="txt_balanca_off">Iniciar a balança</string>

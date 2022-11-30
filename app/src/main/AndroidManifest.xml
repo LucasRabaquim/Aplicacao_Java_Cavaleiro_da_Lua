@@ -9,66 +9,65 @@
     <uses-permission android:name="android.permission.ACCESS_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_aplicativo_round"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_aplicativo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight"
         tools:targetApi="31">
         <activity
-            android:name=".quizMaker_activity"
-            android:exported="false"
-            android:configChanges="uiMode">
+            android:name=".problemas_Activity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".tema_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".inicio_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".mapa_activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".curiosidades_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".diferencas_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".sensor_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".resultado_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".quiz_Activity"
-            android:exported="false"
-            android:configChanges="uiMode"/>
+            android:configChanges="uiMode"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:configChanges="uiMode">
+            android:configChanges="uiMode"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
