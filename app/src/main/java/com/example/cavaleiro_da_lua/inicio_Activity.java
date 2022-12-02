@@ -64,6 +64,9 @@ public class inicio_Activity extends AppCompatActivity {
              case R.id.item8:
                  intent = new Intent(getApplicationContext(),problemas_Activity.class);
                  break;
+			case R.id.item9:
+                 intent = new Intent(getApplicationContext(),Review.class);
+                 break;
              default:
                  return super.onOptionsItemSelected(item);
          }

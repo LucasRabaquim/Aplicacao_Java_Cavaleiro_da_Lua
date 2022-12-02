@@ -39,14 +39,15 @@ salvar();
     public void ler(){
         if(!dir.exists())
             dir.mkdirs();
-            try {
+        try {
+
                 FileInputStream fis = openFileInput(nome_arquivo);
                 InputStreamReader isr = new InputStreamReader(fis);
                 BufferedReader leitor = new BufferedReader(isr);
                 StringBuilder construtor = new StringBuilder();
                 StringBuilder texto = new StringBuilder();
                 while (leitor.readLine() != null)
-                    texto.append(mensagem.toString());
+                    construtor.append(texto);
                 mensagem.setText(texto);
                 Toast.makeText(this, texto + "aeee", Toast.LENGTH_LONG).show();
             } catch (FileNotFoundException e) {
@@ -69,6 +70,7 @@ salvar();
             writer.close();
         } catch (Exception e){
             e.printStackTrace();
+            Toast.makeText(this, "merda", Toast.LENGTH_LONG).show();
         }
     }
 }
