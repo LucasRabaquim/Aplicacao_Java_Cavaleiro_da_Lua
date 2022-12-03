@@ -1,17 +1,12 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class diferencas_Activity extends AppCompatActivity {
 
@@ -19,12 +14,10 @@ public class diferencas_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diferencas);
-
         Button btn_hq1 = findViewById(R.id.btn_hq1);
         Button btn_hq2 = findViewById(R.id.btn_hq2);
         Button btn_hq3 = findViewById(R.id.btn_hq3);
         Button btn_hq4 = findViewById(R.id.btn_hq4);
-
         btn_hq1.setOnClickListener(view ->
             comprar("https://produto.mercadolivre.com.br/MLB-2787331921-gibi-cavaleiro-da-lua-volume-1-re-_JM#position=18&search_layout=stack&type=item&tracking_id=93fe0eff-95d5-4ff5-a4cf-ba9dc25f683c")
         );
@@ -45,12 +38,12 @@ public class diferencas_Activity extends AppCompatActivity {
         startActivity(Intent.createChooser(intent, getString(R.string.chooser_navegador)));
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         MenuClass menu = new MenuClass();

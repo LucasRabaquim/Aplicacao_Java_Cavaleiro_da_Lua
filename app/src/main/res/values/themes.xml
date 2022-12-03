@@ -16,7 +16,7 @@
 
         <item name="android:background" >@color/brancoTransparente</item>
         <item name="android:button" >@color/branco4</item>
-        <item name="android:text" >@color/preto1</item>
+        <item name="android:text" >@color/black</item>
     </style>
     <style name="temaEscuro">
         <item name="android:background" >@color/pretoTransparente</item>

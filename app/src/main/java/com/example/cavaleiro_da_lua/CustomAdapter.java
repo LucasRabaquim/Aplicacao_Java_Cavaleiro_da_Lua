@@ -9,11 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
@@ -46,7 +44,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder._nome.setText(String.valueOf(_nome.get(position)));
         holder._email.setText(String.valueOf(_email.get(position)));
         holder._mensagem.setText(String.valueOf(_mensagem.get(position)));
-        //Recyclerview onClickListener
+
         holder.mainLayout.setOnClickListener(view -> {
             Intent intent = new Intent(context, UpdateActivity.class);
             intent.putExtra("id", String.valueOf(_id.get(position)));
@@ -55,15 +53,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             intent.putExtra("mensagem", String.valueOf(_mensagem.get(position)));
             activity.startActivityForResult(intent, 1);
         });
-
-
     }
 
     @Override
     public int getItemCount() {
         return _id.size();
     }
-
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView _id, _nome, _email, _mensagem;
@@ -76,10 +71,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             _email = itemView.findViewById(R.id.item_review_email);
             _mensagem = itemView.findViewById(R.id.item_review_mensagem);
             mainLayout = itemView.findViewById(R.id.mainLayout);
-            //Animate Recyclerview
-
         }
-
     }
-
 }

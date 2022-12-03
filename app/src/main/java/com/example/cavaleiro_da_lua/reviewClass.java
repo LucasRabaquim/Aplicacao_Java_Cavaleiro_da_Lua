@@ -12,47 +12,18 @@ public class reviewClass implements Serializable {
     private String _email;
     private String _mensagem;
 
-    public reviewClass(){   }
-
-    public reviewClass(String _nome, String _email, String _mensagem) {
-        this._nome = _nome;
-        this._email = _email;
-        this._mensagem = _mensagem;
-    }
-
-    public reviewClass(int _id, String _nome, String _email, String _mensagem) {
-        this._id = _id;
-        this._nome = _nome;
-        this._email = _email;
-        this._mensagem = _mensagem;
-    }
-
-    public int get_id() {
-        return _id;
-    }
+    public reviewClass(){}
 
     public void set_id(int _id) {
         this._id = _id;
-    }
-
-    public String get_nome() {
-        return _nome;
     }
 
     public void set_nome(String _nome) {
         this._nome = _nome;
     }
 
-    public String get_email() {
-        return _email;
-    }
-
     public void set_email(String _email) {
         this._email = _email;
-    }
-
-    public String get_mensagem() {
-        return _mensagem;
     }
 
     public void set_mensagem(String _mensagem) {

@@ -1,19 +1,13 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class curiosidades_Activity extends AppCompatActivity {
 
@@ -34,20 +28,19 @@ public class curiosidades_Activity extends AppCompatActivity {
         ImageButton btn_anterior = findViewById(R.id.btn_curio_anterior);
         Intent dadosIntent = getIntent();
         index_curio = dadosIntent.getIntExtra(curiosidades_Activity.EXTRA_CURIO,0);
-
         mostrar_curiosidade();
+
         btn_proxima.setOnClickListener(view -> {
             index_curio++;
-            if(index_curio > 3) {
+            if(index_curio > 3)
                 index_curio = 0;
-            }
             trocar_curiosidade();
         });
+
         btn_anterior.setOnClickListener(view -> {
             index_curio--;
-            if(index_curio < 0){
+            if(index_curio < 0)
                 index_curio = 3;
-            }
             trocar_curiosidade();
         });
 
@@ -84,13 +77,13 @@ public class curiosidades_Activity extends AppCompatActivity {
         startActivity(Intent.createChooser(intentCompartilhar, getString(R.string.chooser_compartilhar)));
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         menu.add(Menu.NONE, 8, Menu.NONE, "Compartilhar");
         return true;
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         MenuClass menu = new MenuClass();
@@ -101,5 +94,4 @@ public class curiosidades_Activity extends AppCompatActivity {
             compartilhar();
         return super.onOptionsItemSelected(item);
     }
-
 }

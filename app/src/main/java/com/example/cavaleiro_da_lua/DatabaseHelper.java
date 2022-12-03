@@ -7,23 +7,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 
 class DatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "Review_Activity.db";
-    private static final int DATABASE_VERSION = 1;
-
-    private static final String TABLE_NAME = "tbl_review";
+    private static final String TABLE_NAME = "tb_review";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_NAME = "_name";
     private static final String COLUMN_EMAIL = "_email";
     private static final String COLUMN_MENSAGEM = "_mensagem";
 
     DatabaseHelper(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, 1);
         this.context = context;
     }
 
@@ -45,25 +42,20 @@ class DatabaseHelper extends SQLiteOpenHelper {
     public void insertReview(String _nome, String _email, String _mensagem){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
         contentValues.put(COLUMN_NAME, _nome);
         contentValues.put(COLUMN_EMAIL, _email);
         contentValues.put(COLUMN_MENSAGEM, _mensagem);
         long result = db.insert(TABLE_NAME,null, contentValues);
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
-        }
+        String alerta = (result == -1) ? "Erro na criação da review" : "Review criada com sucesso.";
+        Toast.makeText(context, alerta, Toast.LENGTH_SHORT).show();
     }
 
     public Cursor selectReview(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
-        if(db != null){
+        if(db != null)
             cursor = db.rawQuery(query, null);
-        }
         return cursor;
     }
 
@@ -73,24 +65,16 @@ class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_NAME, _name);
         cv.put(COLUMN_EMAIL, _author);
         cv.put(COLUMN_MENSAGEM, _pages);
-
         long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{_id});
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
-        }
-
+        String alerta = (result == -1) ? "Falha na alteração," : "Alteração realizada com sucesso.";
+        Toast.makeText(context, alerta, Toast.LENGTH_SHORT).show();
     }
 
     public void deleteOneRow(String _id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, "_id=?", new String[]{_id});
-        if(result == -1){
-            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
-        }
+        String alerta = (result == -1) ? "Falha na exclusão da review," : "Review excluida com sucesso.";
+        Toast.makeText(context, alerta, Toast.LENGTH_SHORT).show();
     }
 
     public void deleteAllData(){
@@ -99,13 +83,9 @@ class DatabaseHelper extends SQLiteOpenHelper {
     }
     public ArrayList<reviewClass> selectListaReview() {
         ArrayList<reviewClass> lista = new ArrayList<>();
-
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from " +
-                        TABLE_NAME,
-                null);
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
         res.moveToFirst();
-
         while (!res.isAfterLast()) {
             reviewClass reviewClass = new reviewClass();
             int i = res.getColumnIndex(COLUMN_NAME);
@@ -122,5 +102,4 @@ class DatabaseHelper extends SQLiteOpenHelper {
         res.close();
         return lista;
     }
-
 }

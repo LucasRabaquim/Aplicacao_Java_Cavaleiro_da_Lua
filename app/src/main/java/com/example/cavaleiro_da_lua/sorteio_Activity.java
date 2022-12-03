@@ -1,9 +1,5 @@
 package com.example.cavaleiro_da_lua;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,10 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,13 +30,12 @@ public class sorteio_Activity extends AppCompatActivity {
         mensagem = findViewById(R.id.edit_mensagem);
         enviar = findViewById(R.id.btn_enviar);
         ler();
-        enviar.setOnClickListener(view ->{salvar(); });
+        enviar.setOnClickListener(view -> salvar());
     }
 
     public void ler(){
-        FileInputStream fis = null;
         try {
-            fis = openFileInput(nome_arquivo);
+            FileInputStream fis = openFileInput(nome_arquivo);
                 InputStreamReader isr = new InputStreamReader(fis);
                 BufferedReader leitor = new BufferedReader(isr);
                 StringBuilder construtor = new StringBuilder();
@@ -47,11 +44,7 @@ public class sorteio_Activity extends AppCompatActivity {
                     construtor.append(texto);
                 mensagem.setText(construtor.toString());
                 fis.close();
-        }
-        catch (FileNotFoundException e) {
-                e.printStackTrace();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
                 e.printStackTrace();
         }
 

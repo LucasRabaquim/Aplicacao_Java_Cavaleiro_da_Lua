@@ -28,6 +28,7 @@ public class tema_Activity extends AppCompatActivity{
         switcher = findViewById(R.id.switch_tema);
         carregar();
         btn_aplicar.setOnClickListener(view -> salvar());
+        btn_voltar.setOnClickListener(view -> finish());
         switcher.setOnClickListener(view ->
             txt_tema.setText( (switcher.isChecked()) ? "Escuro" : "Claro")
         );
@@ -45,6 +46,7 @@ public class tema_Activity extends AppCompatActivity{
         tema.escolher_tema(settings, switcher.isChecked());
         AppCompatDelegate.setDefaultNightMode(tema.aplicar_tema(settings));
         Intent intent = new Intent(getApplicationContext(), tema_Activity.class);
+        finish();
         startActivity(intent);
     }
     @Override
