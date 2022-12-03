@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -44,13 +45,6 @@ public class mapa_activity extends AppCompatActivity{
         rd4 = findViewById(R.id.rd4_local);
         Button btn_local = findViewById(R.id.btn_hq3);
         btn_local.setOnClickListener(view -> mostrarLocal());
-
-        Tema tema = new Tema();
-        Button[] botoes = {btn_local};
-        TextView[] textos = {view_local,view_distancia};
-        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
-        boolean temaAtual = tema.recuperar_tema(settings);
-        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
     }
 
     private void verificarPermissao(){
@@ -79,26 +73,25 @@ public class mapa_activity extends AppCompatActivity{
     }
 
     private void mostrarLocal() {
-        verificarPermissao();
-        if (gpsAtivo()) {
-            if(rd1.isChecked()) {
-                localEscolhido(0);
-            }
-            else if(rd2.isChecked()) {
-                localEscolhido(1);
-            }
-            else if(rd3.isChecked()) {
-                localEscolhido(2);
-            }
-            else if(rd4.isChecked()) {
-                localEscolhido(3);
-            }
-            else{
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(R.string.msgbox_local_texto).setTitle(R.string.msgbox_local_titulo);
-                builder.create().show();
+        try {
+            verificarPermissao();
+            if (gpsAtivo()) {
+                if (rd1.isChecked()) {
+                    localEscolhido(0);
+                } else if (rd2.isChecked()) {
+                    localEscolhido(1);
+                } else if (rd3.isChecked()) {
+                    localEscolhido(2);
+                } else if (rd4.isChecked()) {
+                    localEscolhido(3);
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage(R.string.msgbox_local_texto).setTitle(R.string.msgbox_local_titulo);
+                    builder.create().show();
+                }
             }
         }
+        catch(Exception e){}
     }
 
     double[][] locais = {
@@ -137,36 +130,12 @@ public class mapa_activity extends AppCompatActivity{
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        Intent intent;
-        switch(item.getItemId()){
-            case R.id.item1:
-                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
-                break;
-            case R.id.item2:
-                intent = new Intent(getApplicationContext(), mapa_activity.class);
-                break;
-            case R.id.item3:
-                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
-                break;
-            case R.id.item4:
-                intent = new Intent(getApplicationContext(), sensor_Activity.class);
-                break;
-            case R.id.item5:
-                intent = new Intent(getApplicationContext(), quiz_Activity.class);
-                break;
-            case R.id.item6:
-                intent = new Intent(getApplicationContext(),tema_Activity.class);
-                break;
-	    case R.id.item7:
-                intent = new Intent(getApplicationContext(),inicio_Activity.class);
-                break;
-            case 8:
-                mostrarMapa();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        startActivity(intent);
+        MenuClass menu = new MenuClass();
+        Intent intent = menu.selecionarMenu(getApplicationContext(), item);
+        if(intent != null)
+            startActivity(intent);
+        else
+            mostrarMapa();
         return super.onOptionsItemSelected(item);
     }
 }

@@ -3,13 +3,12 @@ package com.example.cavaleiro_da_lua;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class AddActivity extends AppCompatActivity {
 
-    EditText title_input, author_input, pages_input;
+    EditText edit_nome,edit_email, edit_mensagem;
     Button add_button;
 
     @Override
@@ -17,18 +16,15 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        title_input = findViewById(R.id.title_input);
-        author_input = findViewById(R.id.author_input);
-        pages_input = findViewById(R.id.pages_input);
+        edit_nome = findViewById(R.id.review_nome);
+        edit_email = findViewById(R.id.review_email);
+        edit_mensagem = findViewById(R.id.review_mensagem);
         add_button = findViewById(R.id.add_button);
-        add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MyDatabaseHelper myDB = new MyDatabaseHelper(AddActivity.this);
-                myDB.addBook(title_input.getText().toString().trim(),
-                        author_input.getText().toString().trim(),
-                        Integer.parseInt(pages_input.getText().toString().trim()));
-            }
+        add_button.setOnClickListener(view -> {
+            DatabaseHelper myDB = new DatabaseHelper(AddActivity.this);
+            myDB.insertReview(edit_nome.getText().toString().trim(),
+                    edit_email.getText().toString().trim(),
+                    edit_mensagem.getText().toString().trim());
         });
     }
 }

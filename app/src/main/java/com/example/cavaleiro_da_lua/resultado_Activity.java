@@ -1,10 +1,12 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -65,6 +67,7 @@ public class resultado_Activity extends AppCompatActivity {
             startActivity(intent);
         });
         floatingButton.setOnClickListener(view -> tela());
+
     }
 
     // Coloca as informações recebidas na tela
@@ -140,37 +143,11 @@ public class resultado_Activity extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        Intent intent;
-        switch(item.getItemId()){
-            case R.id.item1:
-                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
-                break;
-            case R.id.item2:
-                intent = new Intent(getApplicationContext(), mapa_activity.class);
-                break;
-            case R.id.item3:
-                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
-                break;
-            case R.id.item4:
-                intent = new Intent(getApplicationContext(), sensor_Activity.class);
-                break;
-            case R.id.item5:
-                intent = new Intent(getApplicationContext(), quiz_Activity.class);
-                break;
-            case R.id.item6:
-                intent = new Intent(getApplicationContext(),tema_Activity.class);
-                break;
-	    case R.id.item7:
-                intent = new Intent(getApplicationContext(),inicio_Activity.class);
-                break;
-            case 8:
-                tela();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        startActivity(intent);
-        return false;
+        MenuClass menu = new MenuClass();
+        Intent intent = menu.selecionarMenu(getApplicationContext(), item);
+        if(intent != null)
+            startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 
 

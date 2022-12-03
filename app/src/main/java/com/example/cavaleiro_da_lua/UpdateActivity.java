@@ -14,21 +14,21 @@ import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    EditText title_input, author_input, pages_input;
-    Button update_button, delete_button;
+    EditText edit_nome, edit_email, edit_mensagem;
+    Button btn_atualizar, btn_deletar;
 
-    String id, title, author, pages;
+    String _id, _nome, _email, _mensagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        title_input = findViewById(R.id.title_input2);
-        author_input = findViewById(R.id.author_input2);
-        pages_input = findViewById(R.id.pages_input2);
-        update_button = findViewById(R.id.update_button);
-        delete_button = findViewById(R.id.delete_button);
+        edit_nome = findViewById(R.id.title_input2);
+        edit_email = findViewById(R.id.author_input2);
+        edit_mensagem = findViewById(R.id.pages_input2);
+        btn_atualizar = findViewById(R.id.update_button);
+        btn_deletar = findViewById(R.id.delete_button);
 
         //First we call this
         getAndSetIntentData();
@@ -36,66 +36,47 @@ public class UpdateActivity extends AppCompatActivity {
         //Set actionbar title after getAndSetIntentData method
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
-            ab.setTitle(title);
+            ab.setTitle(_nome);
         }
 
-        update_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //And only then we call this
-                MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
-                title = title_input.getText().toString().trim();
-                author = author_input.getText().toString().trim();
-                pages = pages_input.getText().toString().trim();
-                myDB.updateData(id, title, author, pages);
-            }
+        btn_atualizar.setOnClickListener(view -> {
+            //And only then we call this
+            DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
+            _nome = edit_nome.getText().toString().trim();
+            _email = edit_email.getText().toString().trim();
+            _mensagem = edit_mensagem.getText().toString().trim();
+            myDB.updateReview(_id, _nome, _email, _mensagem);
         });
-        delete_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                confirmDialog();
-            }
-        });
-
+        btn_deletar.setOnClickListener(view -> confirmar());
     }
 
-    void getAndSetIntentData(){
-        if(getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
-                getIntent().hasExtra("author") && getIntent().hasExtra("pages")){
-            //Getting Data from Intent
-            id = getIntent().getStringExtra("id");
-            title = getIntent().getStringExtra("title");
-            author = getIntent().getStringExtra("author");
-            pages = getIntent().getStringExtra("pages");
+    public void getAndSetIntentData(){
+            _id = getIntent().getStringExtra("id");
+            _nome = getIntent().getStringExtra("nome");
+            _email = getIntent().getStringExtra("email");
+            _mensagem = getIntent().getStringExtra("mensagem");
 
             //Setting Intent Data
-            title_input.setText(title);
-            author_input.setText(author);
-            pages_input.setText(pages);
-            Log.d("stev", title+" "+author+" "+pages);
-        }else{
+            edit_nome.setText(_nome);
+            edit_email.setText(_email);
+            edit_mensagem.setText(_mensagem);
+       /* }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
-    void confirmDialog(){
+    public void confirmar(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete " + title + " ?");
-        builder.setMessage("Are you sure you want to delete " + title + " ?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
-                myDB.deleteOneRow(id);
-                finish();
-            }
+        builder.setTitle("Delete " + _nome + " ?");
+        builder.setMessage("Are you sure you want to delete " + _nome + " ?");
+        builder.setPositiveButton("Yes", (dialogInterface, i) -> {
+            DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
+            myDB.deleteOneRow(_id);
+            finish();
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
+        builder.setNegativeButton("Não", (dialogInterface, i) ->
+                Toast.makeText(this, "Ação Cancelada.", Toast.LENGTH_SHORT).show()
+        );
         builder.create().show();
     }
 }

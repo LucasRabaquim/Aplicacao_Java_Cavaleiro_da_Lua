@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class inicio_Activity extends AppCompatActivity {
 
@@ -24,11 +25,7 @@ public class inicio_Activity extends AppCompatActivity {
         txt_noticia1.setMovementMethod(LinkMovementMethod.getInstance());
         txt_noticia2.setMovementMethod(LinkMovementMethod.getInstance());
         txt_noticia3.setMovementMethod(LinkMovementMethod.getInstance());
-        Tema tema = new Tema();
-        Button[] botoes = {};
-        TextView[] textos = {txt_noticia1,txt_noticia2,txt_noticia3,findViewById(R.id.txt_inicio)};
-        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
-        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
+
     }
 
     @Override
@@ -38,39 +35,10 @@ public class inicio_Activity extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        Intent intent;
-         switch(item.getItemId()){
-             case R.id.item1:
-                 intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
-                 break;
-             case R.id.item2:
-                 intent = new Intent(getApplicationContext(), mapa_activity.class);
-                 break;
-             case R.id.item3:
-                 intent = new Intent(getApplicationContext(), diferencas_Activity.class);
-                 break;
-             case R.id.item4:
-                 intent = new Intent(getApplicationContext(), sensor_Activity.class);
-                 break;
-             case R.id.item5:
-                 intent = new Intent(getApplicationContext(), quiz_Activity.class);
-                 break;
-            case R.id.item6:
-                intent = new Intent(getApplicationContext(),tema_Activity.class);
-                break;
-	    case R.id.item7:
-                intent = new Intent(getApplicationContext(),inicio_Activity.class);
-                break;
-             case R.id.item8:
-                 intent = new Intent(getApplicationContext(),problemas_Activity.class);
-                 break;
-			case R.id.item9:
-                 intent = new Intent(getApplicationContext(),Review.class);
-                 break;
-             default:
-                 return super.onOptionsItemSelected(item);
-         }
-        startActivity(intent);
+        MenuClass menu = new MenuClass();
+        Intent intent = menu.selecionarMenu(getApplicationContext(), item);
+        if(intent != null)
+            startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 }

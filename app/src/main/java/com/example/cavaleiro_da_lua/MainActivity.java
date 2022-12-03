@@ -1,6 +1,7 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         botao = findViewById(R.id.btn_entrar);
         barra = findViewById(R.id.progressBar_entrar);
+        Tema tema = new Tema();
+        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
+        AppCompatDelegate.setDefaultNightMode(tema.aplicar_tema(settings));
     }
 
     /* Botão para entrar, esconde o botão e mostra a barra de carregamento, mudando de tela após
