@@ -1,16 +1,12 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class diferencas_Activity extends AppCompatActivity {
 
@@ -18,12 +14,10 @@ public class diferencas_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diferencas);
-
         Button btn_hq1 = findViewById(R.id.btn_hq1);
         Button btn_hq2 = findViewById(R.id.btn_hq2);
         Button btn_hq3 = findViewById(R.id.btn_hq3);
         Button btn_hq4 = findViewById(R.id.btn_hq4);
-
         btn_hq1.setOnClickListener(view ->
             comprar("https://produto.mercadolivre.com.br/MLB-2787331921-gibi-cavaleiro-da-lua-volume-1-re-_JM#position=18&search_layout=stack&type=item&tracking_id=93fe0eff-95d5-4ff5-a4cf-ba9dc25f683c")
         );
@@ -36,13 +30,6 @@ public class diferencas_Activity extends AppCompatActivity {
         btn_hq4.setOnClickListener(view ->
             comprar("https://www.martinsfontespaulista.com.br/moon-knight-by-bendis---maleev-997725/p?idsku=997725&srsltid=AR5OiO1c2GQFWVpdYHKVznDwDSJ6hSQycb1N-Q5xU5F9xYhG8ryAtKgurhs")
         );
-
-        Tema tema = new Tema();
-        Button[] botoes = {btn_hq1,btn_hq2,btn_hq3,btn_hq4};
-        TextView[] textos = {findViewById(R.id.txt_hq1),findViewById(R.id.txt_hq2),findViewById(R.id.txt_hq3),findViewById(R.id.txt_hq4)};
-        SharedPreferences settings = getSharedPreferences("com.example.cavaleiro_da_lua", 0);
-        boolean temaAtual = tema.recuperar_tema(settings);
-        tema.aplicar_tema(getApplicationContext(),settings, this.findViewById(android.R.id.content),botoes,textos);
     }
     // Botões com o link para compra do quadrinho utilizando intent implicita
     private void comprar(String link_site) {
@@ -51,41 +38,18 @@ public class diferencas_Activity extends AppCompatActivity {
         startActivity(Intent.createChooser(intent, getString(R.string.chooser_navegador)));
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        Intent intent;
-        switch(item.getItemId()){
-            case R.id.item1:
-                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
-                break;
-            case R.id.item2:
-                intent = new Intent(getApplicationContext(), mapa_activity.class);
-                break;
-            case R.id.item3:
-                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
-                break;
-            case R.id.item4:
-                intent = new Intent(getApplicationContext(), sensor_Activity.class);
-                break;
-            case R.id.item5:
-                intent = new Intent(getApplicationContext(), quiz_Activity.class);
-                break;
-            case R.id.item6:
-                intent = new Intent(getApplicationContext(),tema_Activity.class);
-                break;
-            case R.id.item7:
-                intent = new Intent(getApplicationContext(),inicio_Activity.class);
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        startActivity(intent);
+        MenuClass menu = new MenuClass();
+        Intent intent = menu.selecionarMenu(getApplicationContext(), item);
+        if(intent != null)
+            startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 }

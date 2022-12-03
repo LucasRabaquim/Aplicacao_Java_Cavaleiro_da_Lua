@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".sensor_Activity">
 
 
@@ -26,10 +27,8 @@
         android:id="@+id/txt_sensor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/pretoTransparente"
         android:text="@string/txt_balanca"
         android:textAlignment="center"
-        android:textColor="@color/branco1"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +41,6 @@
         android:id="@+id/btn_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/branco1"
         android:scaleX="2"
         android:scaleY="2"
         android:textAlignment="center"

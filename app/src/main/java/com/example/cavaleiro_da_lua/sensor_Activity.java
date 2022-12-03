@@ -1,9 +1,5 @@
 package com.example.cavaleiro_da_lua;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -12,9 +8,12 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 public class sensor_Activity extends AppCompatActivity implements SensorEventListener{
 
@@ -61,8 +60,6 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
                 erro();
             }
         });
-
-
     }
 
     public void definirSensor(){
@@ -134,63 +131,10 @@ public class sensor_Activity extends AppCompatActivity implements SensorEventLis
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        Intent intent;
-        switch(item.getItemId()){
-            case R.id.item1:
-                intent = new Intent(getApplicationContext(), curiosidades_Activity.class);
-                break;
-            case R.id.item2:
-                intent = new Intent(getApplicationContext(), mapa_activity.class);
-                break;
-            case R.id.item3:
-                intent = new Intent(getApplicationContext(), diferencas_Activity.class);
-                break;
-            case R.id.item4:
-                intent = new Intent(getApplicationContext(), sensor_Activity.class);
-                break;
-            case R.id.item5:
-                intent = new Intent(getApplicationContext(), quiz_Activity.class);
-                break;
-            case R.id.item6:
-                intent = new Intent(getApplicationContext(),tema_Activity.class);
-                break;
-	    case R.id.item7:
-                intent = new Intent(getApplicationContext(),inicio_Activity.class);
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        startActivity(intent);
+        MenuClass menu = new MenuClass();
+        Intent intent = menu.selecionarMenu(getApplicationContext(), item);
+        if(intent != null)
+            startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 }
-
-/* Forma alternativa de fazer a checagem do valor da ângulação no método onSensorChanged():
-
-          // Método onSensorChanged()
-            Float[] angulos;
-            if(sensor == sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
-                inclinacao += event.values[2];
-            }
-            else{
-                inclinacao = event.values[0];
-            }
-            int index_mensagem = angulacao(inclinacao);
-            mudarInformacoes(index_mensagem);
-            *
-            *
-         // Método da angulacao
-            int angulacao(float inclinacao){
-            Float[] angulos;
-            if(sensor == sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
-                angulos = new Float[]{-16f, -8f, 8f, 16f, 9999f};
-            }
-            else{
-                angulos = new Float[]{-6f, -3f, 3f, 6f, 9999f};
-            }
-            for(int i = 0; i < angulos.length; i++){
-                if(inclinacao < angulo[i]) {
-                    return i;
-                }
-            }
-*/

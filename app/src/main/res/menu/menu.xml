@@ -22,15 +22,8 @@
         android:title="@string/btn_inicio"/>
 
     <item android:id="@+id/item8"
-<<<<<<< Updated upstream
-        android:title="@string/placeholder"/>
-<!--
-    <item android:id="@+id/item9"
-        android:title="@string/placeholder"/>-->
-=======
         android:title="@string/item_sorteio"/>
 
     <item android:id="@+id/item9"
         android:title="@string/item_review"/>
->>>>>>> Stashed changes
 </menu>

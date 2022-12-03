@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".mapa_activity">
 
 
@@ -12,7 +13,7 @@
         android:layout_width="333dp"
         android:layout_height="155dp"
         android:layout_marginTop="36dp"
-        android:background="@color/pretoTransparente"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +24,7 @@
             android:id="@+id/rd1_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_museu"
-            android:textColor="@color/branco1" />
+            android:text="@string/rd_museu"/>
 
         <View
             android:id="@+id/divider8"
@@ -36,8 +36,7 @@
             android:id="@+id/rd2_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_castelo"
-            android:textColor="@color/branco1" />
+            android:text="@string/rd_castelo" />
 
         <View
             android:id="@+id/divider7"
@@ -49,8 +48,7 @@
             android:id="@+id/rd3_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_cairo"
-            android:textColor="@color/branco1" />
+            android:text="@string/rd_cairo" />
 
         <View
             android:id="@+id/divider5"
@@ -62,8 +60,7 @@
             android:id="@+id/rd4_local"
             android:layout_width="match_parent"
             android:layout_height="38.75dp"
-            android:text="@string/rd_manicomio"
-            android:textColor="@color/branco1" />
+            android:text="@string/rd_manicomio" />
 
         <View
             android:id="@+id/divider"
@@ -77,10 +74,8 @@
         android:layout_width="347dp"
         android:layout_height="51dp"
         android:layout_marginTop="16dp"
-        android:background="@color/pretoTransparente"
         android:text="@string/txt_locais_serie"
         android:textAlignment="center"
-        android:textColor="@color/branco1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,8 +87,6 @@
         android:id="@+id/txt_distancia"
         android:layout_width="199dp"
         android:layout_height="61dp"
-        android:background="@color/pretoTransparente"
-        android:textColor="@color/branco1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +96,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
-        android:id="@+id/btn_hq3"
+        android:id="@+id/btn_comparar_distancia"
         android:layout_width="132dp"
         android:layout_height="55dp"
         android:background="@color/amarelo_lua"
