@@ -166,8 +166,6 @@
     <string name="escuro">Escuro</string>
 
     <string name="btn_tema">Tema</string>
-<<<<<<< Updated upstream
-=======
     <string name="item_voltar">Voltar</string>
     <string name="item_apagar">Apagar dados</string>
     <string name="item_ajuda">Ajuda</string>
@@ -198,5 +196,4 @@
     <string name="escrever_review">Escrever Review</string>
     <string name="item_sorteio">Sorteio</string>
     <string name="item_review">Review</string>
->>>>>>> Stashed changes
 </resources>

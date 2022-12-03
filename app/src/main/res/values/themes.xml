@@ -13,5 +13,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:background" >@color/brancoTransparente</item>
+        <item name="android:button" >@color/branco4</item>
+        <item name="android:text" >@color/black</item>
+    </style>
+    <style name="temaEscuro">
+        <item name="android:background" >@color/pretoTransparente</item>
+        <item name="android:button" >@color/preto1</item>
+        <item name="android:text" >@color/white</item>
     </style>
 </resources>

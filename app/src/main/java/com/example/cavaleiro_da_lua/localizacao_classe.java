@@ -13,5 +13,4 @@ public class localizacao_classe implements LocationListener {
         latitude  = location.getLatitude();
         longitude = location.getLongitude();
     }
-
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".resultado_Activity">
 
 
@@ -26,7 +27,7 @@
         android:layout_height="72dp"
         android:background="@color/amarelo_lua"
         android:backgroundTint="@color/amarelo_lua"
-        android:text="TextView"
+        android:text="@string/placeholder"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -41,23 +42,19 @@
         android:id="@+id/btn_voltar"
         android:layout_width="123dp"
         android:layout_height="73dp"
-        android:backgroundTint="@color/amarelo_lua"
         android:text="@string/btn_voltar"
-        android:textColor="@color/branco1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_resultado_quiz"
+        app:layout_constraintVertical_bias="0.531" />
 
     <TextView
         android:id="@+id/txt_descricao"
         android:layout_width="382dp"
         android:layout_height="132dp"
-        android:background="@color/pretoTransparente"
         android:text="@string/placeholder"
         android:textAlignment="center"
-        android:textColor="@color/branco1"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +69,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/placeholder"
-        android:textColor="@color/branco1"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
