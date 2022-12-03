@@ -67,9 +67,9 @@ public class UpdateActivity extends AppCompatActivity {
 
     public void confirmar(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete " + _nome + " ?");
-        builder.setMessage("Are you sure you want to delete " + _nome + " ?");
-        builder.setPositiveButton("Yes", (dialogInterface, i) -> {
+        builder.setTitle(_nome + " quer mesmo deletar sua Review?");
+        builder.setMessage("Essa ação não poderá ser desfeita.");
+        builder.setPositiveButton("Sim", (dialogInterface, i) -> {
             DatabaseHelper myDB = new DatabaseHelper(UpdateActivity.this);
             myDB.deleteOneRow(_id);
             finish();

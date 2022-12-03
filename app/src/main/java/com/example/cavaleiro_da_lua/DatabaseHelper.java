@@ -8,10 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 class DatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
-    private static final String DATABASE_NAME = "Review.db";
+    private static final String DATABASE_NAME = "Review_Activity.db";
     private static final int DATABASE_VERSION = 1;
 
     private static final String TABLE_NAME = "tbl_review";
@@ -94,6 +96,31 @@ class DatabaseHelper extends SQLiteOpenHelper {
     public void deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
+    public ArrayList<reviewClass> selectListaReview() {
+        ArrayList<reviewClass> lista = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from " +
+                        TABLE_NAME,
+                null);
+        res.moveToFirst();
+
+        while (!res.isAfterLast()) {
+            reviewClass reviewClass = new reviewClass();
+            int i = res.getColumnIndex(COLUMN_NAME);
+            reviewClass.set_nome(res.getString(i));
+            i = res.getColumnIndex(COLUMN_ID);
+            reviewClass.set_id(Integer.parseInt(res.getString(i)));
+            i = res.getColumnIndex(COLUMN_EMAIL);
+            reviewClass.set_email(res.getString(i));
+            i = res.getColumnIndex(COLUMN_MENSAGEM);
+            reviewClass.set_mensagem(res.getString(i));
+            lista.add(reviewClass);
+            res.moveToNext();
+        }
+        res.close();
+        return lista;
     }
 
 }

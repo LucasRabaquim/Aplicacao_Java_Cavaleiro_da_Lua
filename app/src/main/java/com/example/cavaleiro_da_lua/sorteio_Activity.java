@@ -1,5 +1,6 @@
 package com.example.cavaleiro_da_lua;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,9 +21,8 @@ import java.io.InputStreamReader;
 
 public class sorteio_Activity extends AppCompatActivity {
 
-    EditText mensagem, email;
+    EditText mensagem;
     Button enviar;
-    String nome_dir = "Sorteio";
     String nome_arquivo = "dados.txt";
     File dir = new File(nome_arquivo);
     @Override
@@ -31,7 +31,6 @@ public class sorteio_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_sorteio);
         mensagem = findViewById(R.id.edit_mensagem);
         enviar = findViewById(R.id.btn_enviar);
-
         ler();
         enviar.setOnClickListener(view ->{salvar(); });
     }
@@ -47,15 +46,14 @@ public class sorteio_Activity extends AppCompatActivity {
                 while ((texto = leitor.readLine()) != null)
                     construtor.append(texto);
                 mensagem.setText(construtor.toString());
-                Toast.makeText(this, texto + "aeee", Toast.LENGTH_LONG).show();
                 fis.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
                 e.printStackTrace();
-                Toast.makeText(this, "A", Toast.LENGTH_LONG).show();
-            } catch (IOException e) {
+        }
+        catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(this, "B", Toast.LENGTH_LONG).show();
-            }
+        }
 
     }
 
@@ -66,24 +64,35 @@ public class sorteio_Activity extends AppCompatActivity {
         try {
             FileOutputStream fos = openFileOutput(nome_arquivo, MODE_PRIVATE);
             fos.write(string.getBytes());
-            Toast.makeText(this,  "aeee", Toast.LENGTH_LONG).show();
             fos.close();
+            Toast.makeText(this,"As informações foram salvas", Toast.LENGTH_LONG).show();
         } catch (Exception e){
             e.printStackTrace();
-            Toast.makeText(this, "merda", Toast.LENGTH_LONG).show();
         }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_sorteio, menu);
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        MenuClass menu = new MenuClass();
-        Intent intent = menu.selecionarMenu(getApplicationContext(), item);
-        if(intent != null)
-            startActivity(intent);
+        switch(item.getItemId()) {
+            case R.id.item_ajuda:
+                ajuda();
+                break;
+            case R.id.item_voltar:
+                finish();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
         return super.onOptionsItemSelected(item);
+    }
+    public void ajuda(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialogo_sorteio_titulo);
+        builder.setMessage(R.string.dialogo_sorteio_texto);
+        builder.create().show();
     }
 }

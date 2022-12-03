@@ -166,4 +166,29 @@
     <string name="escuro">Escuro</string>
 
     <string name="btn_tema">Tema</string>
+    <string name="item_voltar">Voltar</string>
+    <string name="item_apagar">Apagar dados</string>
+    <string name="item_ajuda">Ajuda</string>
+    <string name="deletar_cancelado">O apagamento foi cancelado</string>
+    <string name="dialogo_apagar_titulo">Apagar dados</string>
+    <string name="dialogo_apagar_texto">Deseja apagar todos os dados?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="item_backup">Fazer Backup</string>
+    <string name="dialogo_backup_texto">Deseja fazer o backup?</string>
+    <string name="backup_cancelado">O backup foi cancelado</string>
+    <string name="dialogo_ajuda_titulo">Sobre reviews</string>
+    <string name="dialogo_ajuda_texto">Use essa tela para escrever comentários sobre o aplicativo e dizer no que podemos melhorar.</string>
+    <string name="dialogo_sorteio_titulo">Sorteio Cavaleirinho da Noite</string>
+    <string name="dialogo_sorteio_texto">Coloque seu nome seguido do seu email para concorrer a um Funko do MoonKnight. Você pode mudar seus dados até dia 19/12/2022.</string>
+    <string name="salvar">Salvar</string>
+    <string name="titulo_sorteio">Sorteio Cavalerinho da Lua</string>
+    <string name="data_sorteio">Válido até dia 19.12.2022</string>
+    <string name="sorteio_nome_email">Digite seu nome e seu email:</string>
+    <string name="btn_atualizar">Atualizar</string>
+    <string name="btn_apagar">Apagar</string>
+    <string name="txt_nome_atualizar">"Nome: "</string>
+    <string name="txt_email_atualizar">"Email: "</string>
+    <string name="txt_mensagem_atualizar">"Mensagem: "</string>
+    <string name="titulo_review">Escreva seu Review</string>
 </resources>

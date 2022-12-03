@@ -33,7 +33,7 @@ public class MenuClass {
                 tela = sorteio_Activity.class;
                 break;
             case R.id.item9:
-                tela = Review.class;
+                tela = Review_Activity.class;
                 break;
             default:
                 break;

@@ -22,7 +22,7 @@
         android:title="@string/btn_inicio"/>
 
     <item android:id="@+id/item8"
-        android:title="@string/placeholder"/>
+        android:title="Sorteio"/>
 
     <item android:id="@+id/item9"
         android:title="Banco"/>
