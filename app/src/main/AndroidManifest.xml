@@ -30,11 +30,11 @@
             android:parentActivityName=".Review_Activity"/>
         <activity
             android:name=".AddActivity"
-            android:label="Add Book"
+            android:label="Criar Review"
             android:parentActivityName=".Review_Activity" />
         <activity
             android:name=".Review_Activity"
-            android:label="Book Library"
+            android:label="Reviews"
             android:exported="false">
 
         </activity>
