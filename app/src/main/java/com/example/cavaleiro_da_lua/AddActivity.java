@@ -1,6 +1,8 @@
 package com.example.cavaleiro_da_lua;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +26,9 @@ public class AddActivity extends AppCompatActivity {
             myDB.insertReview(edit_nome.getText().toString().trim(),
                     edit_email.getText().toString().trim(),
                     edit_mensagem.getText().toString().trim());
+            Intent intent = new Intent(getApplicationContext(),Review_Activity.class);
+            startActivity(intent);
         });
+
     }
 }

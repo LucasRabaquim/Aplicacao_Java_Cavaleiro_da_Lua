@@ -108,7 +108,8 @@ public class Review_Activity extends AppCompatActivity {
          ajuda();
          break;
       case R.id.item_voltar:
-         finish();
+         Intent intent = new Intent(getApplicationContext(), inicio_Activity.class);
+         startActivity(intent);
          break;
       case R.id.item_backup:
          perguntar(false);

@@ -31,10 +31,10 @@
         android:textColor="@color/branco1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/img_curio"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/img_curio"
         app:layout_constraintTop_toBottomOf="@+id/img_curio"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <ImageButton
         android:id="@+id/btn_curio_proxima"
@@ -43,10 +43,10 @@
         android:background="@drawable/seta_direita"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txt_Curio"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
+        app:layout_constraintVertical_bias="0.343"
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
@@ -56,10 +56,10 @@
         android:background="@drawable/seta_esquerda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txt_Curio"
-        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
+        app:layout_constraintVertical_bias="0.343"
         tools:src="@tools:sample/avatars" />
 
     <ImageView
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17000002"
+        app:layout_constraintVertical_bias="0.009"
         tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

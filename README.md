@@ -1,10 +1,8 @@
 # Aplicacao_Java_Cavaleiro_da_Lua
-Aplicativo mobile do herói da Marvel Cavaleiro da Lua desenvolvido em Java. Desenvolvida no 3ºBimestre por:<br>
-Polianna Albuquerque Lima.<br>
-Lucas Daniel da Costa Rabaquim.<br><br>
-Continuada no 4°Bimestre por:<br>
-Levi da Costa Bergamascki Martins.<br>
-Lucas Daniel da Costa Rabaquim.<br><br>
+Aplicativo mobile do herói da Marvel Cavaleiro da Lua desenvolvido em Java. Por:
+Polianna Albuquerque Lima.
+Lucas Daniel da Costa Rabaquim.
+2°ETIM DS
 
 <hr>
  O Aplicativo é nossa avaliação bimestral que avalia conceitos passados em aula como:
@@ -23,5 +21,3 @@ Lucas Daniel da Costa Rabaquim.<br><br>
   <li> Um quiz</li>
   <li> E uma surpresa para mostrar as personalidades do protagonista</li>
  </ul>
- <br>
- Para o 4° Bimestre foram implementados os armazenamentos interno, externo e de Banco de dados

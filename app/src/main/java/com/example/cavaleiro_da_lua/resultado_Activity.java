@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -63,34 +64,47 @@ public class resultado_Activity extends AppCompatActivity {
       view_txt_descricao.setText(txt_descricao[index]);
    }
 
-   public void tela() {
+
+   public void tela(){
+
       String state = Environment.getExternalStorageState();
+
       if (ActivityCompat.checkSelfPermission(this,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE) !=
-         PackageManager.PERMISSION_GRANTED) {
-         ActivityCompat.requestPermissions(this, new String[] {
-               Manifest.permission.WRITE_EXTERNAL_STORAGE
-            },1);
+              Manifest.permission.WRITE_EXTERNAL_STORAGE)
+              != PackageManager.PERMISSION_GRANTED) {
+         ActivityCompat.requestPermissions(this, new String[]
+                         {Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                 1);
       }
-      else {
+      else{
          if (Environment.MEDIA_MOUNTED.equals(state)) {
             Date now = new Date();
             android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
+
             try {
-               String dPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
+               File dir = Environment.getExternalStorageDirectory();
+               // image naming and path  to include sd card  appending name you choose for file
+               String dPath = Environment.getExternalStorageDirectory().toString() + "/DCIM" + "/ScreenShot_" + now + ".jpg";
+
+               // create bitmap screen capture
                View v1 = getWindow().getDecorView().getRootView();
                v1.setDrawingCacheEnabled(true);
                Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
                v1.setDrawingCacheEnabled(false);
+
                File imageFile = new File(dPath);
+
                FileOutputStream outputStream = new FileOutputStream(imageFile);
                int quality = 100;
                bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
                outputStream.flush();
                outputStream.close();
-               Toast.makeText(this, "Captura de tela salva", Toast.LENGTH_SHORT).show();
+               Toast.makeText(this,"Captura de tela salva", Toast.LENGTH_SHORT).show();
+
             } catch (Throwable e) {
-               Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+               // Several error may come out with file handling or DOM
+               Toast.makeText(getApplicationContext(),e.getMessage(),
+                       Toast.LENGTH_SHORT).show();
                e.printStackTrace();
             }
          }
